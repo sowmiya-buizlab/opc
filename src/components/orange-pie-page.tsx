@@ -23,6 +23,15 @@ import {
   Zap,
   X,
 } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaPinterestP,
+  FaWhatsapp,
+  FaXTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 
 import heroImage from "../assets/orange-pie-hero.jpg";
 import communityImage from "../assets/community-workshop.jpg";
@@ -34,6 +43,7 @@ import wellbeingImage from "../assets/wellbeing-lifestyle.jpg";
 import orangeEconomyImage from "../assets/orange-economy.jpg";
 import collaborationImage from "../assets/community-collaboration.jpg";
 import logoAsset from "../assets/OPC_logo_png.png.asset.json";
+import footerLogoAsset from "../assets/OPC_logo_black_BG_png.png.asset.json";
 
 const navItems = [
   ["About", "about"],
@@ -433,14 +443,29 @@ export function OrangePiePage() {
       </main>
 
       <footer className="footer">
-        <div className="page-width footer-grid">
-          <div><Wordmark light /><p>Human. Powered by Kreativity</p></div>
-          <nav className="footer-links" aria-label="Footer navigation">
-            {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
-            <a href="#registration">Join the Community</a>
-          </nav>
-          <div className="footer-contact"><h2>Contact Us</h2><a href="tel:9444948494">9444948494</a><a href="mailto:OPL@gmail.com">OPL@gmail.com</a></div>
-          <p className="copyrights">copyrights</p>
+        <div className="footer-main">
+          <div className="page-width footer-grid">
+            <a href="#top" className="footer-brand" aria-label="Orange Pie Community home">
+              <img src={footerLogoAsset.url} alt="Orange Pie Community — Human. Powered by Kreativity" />
+            </a>
+            <nav className="footer-links" aria-label="Footer navigation">
+              {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
+              <a href="#registration">Join the Community</a>
+            </nav>
+            <div className="footer-contact"><h2>Contact Us</h2><a href="tel:9444948494">9444948494</a><a href="mailto:OPL@gmail.com">OPL@gmail.com</a></div>
+            <nav className="social-links" aria-label="Social media">
+              <a href="https://www.facebook.com/profile.php?id=61594534073105" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF aria-hidden="true" /></a>
+              <a href="https://www.instagram.com/orangepie.ai/?hl=en" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram aria-hidden="true" /></a>
+              <span className="social-link-disabled" role="img" aria-label="WhatsApp"><FaWhatsapp aria-hidden="true" /></span>
+              <a href="https://www.youtube.com/channel/UCP9rEHGptx_tYibTF8ymUwA" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube aria-hidden="true" /></a>
+              <a href="https://x.com/Orangepieai" target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter aria-hidden="true" /></a>
+              <a href="https://in.pinterest.com/Orangepieai/" target="_blank" rel="noreferrer" aria-label="Pinterest"><FaPinterestP aria-hidden="true" /></a>
+              <a href="https://www.linkedin.com/company/143884050/admin/dashboard/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn aria-hidden="true" /></a>
+            </nav>
+          </div>
+        </div>
+        <div className="footer-legal">
+          <div className="page-width"><p>Copyrights reserved by orangepie community @2026</p></div>
         </div>
       </footer>
     </div>
