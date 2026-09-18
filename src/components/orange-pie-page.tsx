@@ -27,6 +27,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaMapLocationDot,
   FaPinterestP,
   FaWhatsapp,
   FaXTwitter,
