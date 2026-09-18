@@ -285,7 +285,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.0625rem); font-weight: 700; line-height: 1.22
   .registration-intro { position: sticky; top: 128px; }
   .faq-grid { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 100px; }
   .footer-main { padding-block: 76px; }
-  .footer-grid { grid-template-columns: minmax(150px,.9fr) minmax(0,1fr) minmax(0,.9fr) auto; align-items: center; gap: 64px; }
+  .footer-grid { grid-template-columns: minmax(140px,.75fr) minmax(0,.8fr) minmax(0,.8fr) auto; align-items: center; gap: 56px; }
   .social-links { grid-template-columns: repeat(4, 42px); justify-content: start; }
 }
 
