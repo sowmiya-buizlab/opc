@@ -348,8 +348,6 @@ export function OrangePiePage() {
             <div className="universe-heading">
               <p className="eyebrow">EXPLORE YOUR INTERESTS</p>
               <h2 id="creative-universe-title">THE CREATIVE UNIVERSE</h2>
-              <p className="universe-lead">Six creative domains.</p>
-              <p className="universe-lead">Many ways to belong.</p>
               <p className="universe-question">What would you like to explore, create, or contribute to?</p>
               <p className="universe-intro">Discover interest circles across six creative domains. Follow a familiar interest or explore something new.</p>
             </div>
