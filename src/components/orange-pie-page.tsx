@@ -2,17 +2,25 @@ import { useState, type FormEvent } from "react";
 import {
   ArrowDownRight,
   ArrowRight,
+  BrainCircuit,
   BriefcaseBusiness,
+  Brush,
   Building2,
   ChevronDown,
+  Clapperboard,
   Compass,
+  Cpu,
+  Eye,
   GraduationCap,
   HeartHandshake,
+  Landmark,
   Lightbulb,
   Menu,
+  Megaphone,
   Palette,
   Sparkles,
   Users,
+  Zap,
   X,
 } from "lucide-react";
 
@@ -23,6 +31,8 @@ import ideasImage from "../assets/ideas-innovation.jpg";
 import artsImage from "../assets/arts-culture.jpg";
 import adventureImage from "../assets/play-adventure.jpg";
 import wellbeingImage from "../assets/wellbeing-lifestyle.jpg";
+import orangeEconomyImage from "../assets/orange-economy.jpg";
+import collaborationImage from "../assets/community-collaboration.jpg";
 
 const navItems = [
   ["About", "about"],
@@ -104,6 +114,52 @@ const experiences = [
     alt: "A group sharing a calm yoga practice in a garden courtyard",
     size: "small",
   },
+  {
+    title: "Community & Collaboration",
+    description: "Connect through community meetups, exchange ideas, and work on shared projects. Build meaningful relationships and discover what you can create together.",
+    image: collaborationImage,
+    alt: "Indian creatives exchanging ideas together at a community meetup",
+    size: "small",
+  },
+] as const;
+
+const creativeDomains = [
+  {
+    title: "Design & Creative Services",
+    description: "Shape how things look, feel, and work.",
+    interests: "Graphic • UX/UI • Product • Fashion • Interior • Packaging",
+    icon: Brush,
+  },
+  {
+    title: "Media & Entertainment",
+    description: "Tell stories through images, movement, and sound.",
+    interests: "Film • Photography • Video • Editing • Animation • VFX • Music",
+    icon: Clapperboard,
+  },
+  {
+    title: "Creator, Brand & Marketing",
+    description: "Create content, build brands, and connect with audiences.",
+    interests: "Content • Branding • Digital Marketing • Advertising • Communication",
+    icon: Megaphone,
+  },
+  {
+    title: "Innovation & Design Thinking",
+    description: "Understand challenges and develop ideas that create value.",
+    interests: "Problem Solving • Product Thinking • Entrepreneurship • Innovation",
+    icon: BrainCircuit,
+  },
+  {
+    title: "Creative Technology & Making",
+    description: "Explore AI, build immersive experiences, and turn digital ideas into things people can experience and use.",
+    interests: "Generative AI • AI Design, Video & Content • AR / VR / XR • 3D • 3D Printing • Interactive Experiences",
+    icon: Cpu,
+  },
+  {
+    title: "Arts, Culture & Heritage",
+    description: "Express yourself and explore the traditions and stories that connect us.",
+    interests: "Art • Crafts • Music • Literature • Folk Arts • Heritage",
+    icon: Landmark,
+  },
 ] as const;
 
 const faqs = [
@@ -177,15 +233,18 @@ export function OrangePiePage() {
 
         <section className="section economy" aria-labelledby="economy-title">
           <div className="page-width economy-grid">
-            <div className="section-heading-wrap">
-              <h2 id="economy-title">Where Kreativity becomes opportunity.</h2>
+            <div className="economy-copy">
+              <p className="eyebrow">THE ORANGE ECONOMY</p>
+              <h2 id="economy-title">Ornage economy</h2>
+              <p className="economy-kicker">Where Kreativity becomes opportunity.</p>
+              <div className="editorial-copy">
+                <p>The Orange Economy brings together activities where creativity, culture, and ideas create value—from art, design, and media to film, animation, and games.</p>
+                <p>Behind these are people using their imagination, knowledge, and skills to create meaningful work, build businesses, and generate opportunities.</p>
+                <p className="emphasis">Your Kreativity can be part of this economy.</p>
+                <p>Orange Pie Community brings people together to explore that potential and discover how their ideas can contribute.</p>
+              </div>
             </div>
-            <div className="editorial-copy">
-              <p>The Orange Economy brings together activities where creativity, culture, and ideas create value—from art, design, and media to film, animation, and games.</p>
-              <p>Behind these are people using their imagination, knowledge, and skills to create meaningful work, build businesses, and generate opportunities.</p>
-              <p className="emphasis">Your Kreativity can be part of this economy.</p>
-              <p>Orange Pie Community brings people together to explore that potential and discover how their ideas can contribute.</p>
-            </div>
+            <figure className="economy-image"><img src={orangeEconomyImage} alt="Indian creatives developing ideas across design, media, and making" width={1280} height={960} loading="lazy" /></figure>
           </div>
         </section>
 
@@ -213,11 +272,11 @@ export function OrangePiePage() {
             </div>
             <div className="direction-grid">
               <article className="direction-item vision">
-                <div className="direction-label"><span>V</span><h3>Our Vision</h3></div>
+                <div className="direction-label"><span><Eye size={23} aria-hidden="true" /></span><h3>Our Vision</h3></div>
                 <p>A future where people use Kreativity to discover what is missing, imagine new possibilities, and create innovative solutions that make society and the world better.</p>
               </article>
               <article className="direction-item mission">
-                <div className="direction-label"><span>M</span><h3>Our Mission</h3></div>
+                <div className="direction-label"><span><Zap size={23} aria-hidden="true" /></span><h3>Our Mission</h3></div>
                 <p>Bring structured Kreativity learning into schools, colleges, offices, and society—helping people discover, develop, and apply their abilities.</p>
                 <p>Through this, we aim to nurture <strong>2–3 lakh</strong> creative talents across <strong>Tamil Nadu</strong> by <strong>2030</strong>.</p>
               </article>
@@ -248,7 +307,7 @@ export function OrangePiePage() {
         <section id="who-can-join" className="section audiences" aria-labelledby="audiences-title">
           <div className="page-width">
             <div className="audience-heading">
-              <div><p className="eyebrow">KREATIVITY IS FOR EVERYONE</p><h2 id="audiences-title">Different people.<br />More possibilities.</h2></div>
+              <h2 id="audiences-title"><span>KREATIVITY IS FOR EVERYONE.</span> Different people. More possibilities.</h2>
               <div className="orbit-mark" aria-hidden="true"><span /><span /><span /></div>
             </div>
             <div className="audience-grid">
@@ -260,6 +319,39 @@ export function OrangePiePage() {
               ))}
             </div>
             <p className="audience-conclusion">You do not need a creative qualification or a finished idea. Begin with curiosity and a willingness to try.</p>
+          </div>
+        </section>
+
+        <section className="section creative-universe" aria-labelledby="creative-universe-title">
+          <div className="page-width">
+            <div className="universe-heading">
+              <p className="eyebrow">EXPLORE YOUR INTERESTS</p>
+              <h2 id="creative-universe-title">THE CREATIVE UNIVERSE</h2>
+              <p className="universe-lead">Six creative domains.</p>
+              <p className="universe-lead">Many ways to belong.</p>
+              <p className="universe-question">What would you like to explore, create, or contribute to?</p>
+              <p className="universe-intro">Discover interest circles across six creative domains. Follow a familiar interest or explore something new.</p>
+            </div>
+            <div className="domain-grid">
+              {creativeDomains.map((domain) => {
+                const Icon = domain.icon;
+                return (
+                  <article className="domain-card" key={domain.title}>
+                    <span className="domain-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span>
+                    <h3>{domain.title}</h3>
+                    <p>{domain.description}</p>
+                    <p className="domain-interests">{domain.interests}</p>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="universe-closing">
+              <h3>One community. More than one interest.</h3>
+              <p>You can belong to multiple interest circles within one Orange Pie Community identity.</p>
+              <p>A student can explore design and AI. An entrepreneur can connect with branding and innovation. An artist can discover immersive technology.</p>
+              <p>Who you are and what you want to create come together here.</p>
+              <ActionLink label="Join the Community" />
+            </div>
           </div>
         </section>
 
@@ -333,6 +425,10 @@ export function OrangePiePage() {
       <footer className="footer">
         <div className="page-width footer-grid">
           <div><Wordmark light /><p>Human. Powered by Kreativity</p></div>
+          <nav className="footer-links" aria-label="Footer navigation">
+            {navItems.map(([label, id]) => <a key={id} href={`#${id}`}>{label}</a>)}
+            <a href="#registration">Join the Community</a>
+          </nav>
           <div className="footer-contact"><h2>Contact Us</h2><a href="tel:9444948494">9444948494</a><a href="mailto:OPL@gmail.com">OPL@gmail.com</a></div>
           <p className="copyrights">copyrights</p>
         </div>
