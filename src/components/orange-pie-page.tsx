@@ -330,7 +330,6 @@ export function OrangePiePage() {
             <div className="audience-heading">
               <p className="eyebrow">WHO CAN JOIN</p>
               <h2 id="audiences-title"><span>KREATIVITY IS FOR EVERYONE.</span> Different people. More possibilities.</h2>
-              <div className="orbit-mark" aria-hidden="true"><span /><span /><span /></div>
             </div>
             <div className="audience-grid">
               {audiences.map(([title, description, Icon]) => (
