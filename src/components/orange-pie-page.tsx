@@ -171,7 +171,6 @@ export function OrangePiePage() {
             </div>
             <div className="hero-art">
               <img src={heroImage} alt="" aria-hidden="true" width={1280} height={1024} fetchPriority="high" />
-              <span className="art-index" aria-hidden="true">01—∞</span>
             </div>
           </div>
         </section>
@@ -179,7 +178,6 @@ export function OrangePiePage() {
         <section className="section economy" aria-labelledby="economy-title">
           <div className="page-width economy-grid">
             <div className="section-heading-wrap">
-              <span className="section-number">01</span>
               <h2 id="economy-title">Where Kreativity becomes opportunity.</h2>
             </div>
             <div className="editorial-copy">
@@ -195,7 +193,6 @@ export function OrangePiePage() {
           <div className="page-width about-grid">
             <figure className="community-image">
               <img src={communityImage} alt="People sharing ideas and prototypes in a contemporary Indian creative studio" width={1280} height={960} loading="lazy" />
-              <figcaption aria-hidden="true"><span>Discover</span><span>Develop</span><span>Connect</span><span>Create</span></figcaption>
             </figure>
             <div className="about-copy">
               <p className="eyebrow">WHAT IS ORANGE PIE COMMUNITY?</p>
@@ -238,7 +235,6 @@ export function OrangePiePage() {
               {benefits.map((benefit, index) => {
                 const Icon = benefit.icon;
                 return <article className="benefit" key={benefit.title}>
-                  <span className="benefit-number">0{index + 1}</span>
                   <span className="benefit-icon"><Icon size={22} strokeWidth={1.6} aria-hidden="true" /></span>
                   <h3>{benefit.title}</h3>
                   <p>{benefit.description}</p>
@@ -256,9 +252,9 @@ export function OrangePiePage() {
               <div className="orbit-mark" aria-hidden="true"><span /><span /><span /></div>
             </div>
             <div className="audience-grid">
-              {audiences.map(([title, description, Icon], index) => (
+              {audiences.map(([title, description, Icon]) => (
                 <article key={title} className="audience-item">
-                  <div className="audience-top"><Icon size={25} strokeWidth={1.5} aria-hidden="true" /><span>0{index + 1}</span></div>
+                  <div className="audience-top"><Icon size={25} strokeWidth={1.5} aria-hidden="true" /></div>
                   <h3>{title}</h3><p>{description}</p>
                 </article>
               ))}
@@ -275,10 +271,10 @@ export function OrangePiePage() {
               <p>From industry exposure to outdoor adventures, discover experiences that help you explore your Kreativity, meet people, and grow.</p>
             </div>
             <div className="experience-grid">
-              {experiences.map((experience, index) => (
+              {experiences.map((experience) => (
                 <article key={experience.title} className={`experience-item experience-${experience.size}`}>
                   <div className="experience-image"><img src={experience.image} alt={experience.alt} width={1024} height={768} loading="lazy" /></div>
-                  <div className="experience-copy"><span>0{index + 1}</span><h3>{experience.title}</h3><p>{experience.description}</p></div>
+                  <div className="experience-copy"><h3>{experience.title}</h3><p>{experience.description}</p></div>
                 </article>
               ))}
             </div>
