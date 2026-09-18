@@ -34,7 +34,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
-import heroImage from "../assets/orange-pie-hero.jpg";
+import heroBannerAsset from "../assets/about-banner.png.asset.json";
 import communityImage from "../assets/community-workshop.jpg";
 import industryImage from "../assets/industry-career.jpg";
 import ideasImage from "../assets/ideas-innovation.jpg";
@@ -238,16 +238,17 @@ export function OrangePiePage() {
 
       <main>
         <section className="hero section" aria-labelledby="hero-title">
+          <div className="hero-bg" aria-hidden="true">
+            <img src={heroBannerAsset.url} alt="" width={1792} height={896} fetchPriority="high" />
+          </div>
+          <div className="hero-veil" aria-hidden="true" />
           <div className="page-width hero-grid">
             <div className="hero-copy">
               <p className="eyebrow">ORANGE PIE COMMUNITY</p>
-              <h1 id="hero-title"><span>Discover your Kreativity.</span><span>Create new possibilities.</span></h1>
+              <h1 id="hero-title"><span>A platform to discover your Kreativity.</span><span>Create new possibilities.</span></h1>
               <p className="hero-intro">Connect with people to explore ideas, learn from each other, and use your Kreativity to make a difference in everyday life, learning, and work.</p>
               <ActionLink label="Join the Community" />
               <p className="supporting-line">Be curious. Share ideas. Create together.</p>
-            </div>
-            <div className="hero-art">
-              <img src={heroImage} alt="" aria-hidden="true" width={1280} height={1024} fetchPriority="high" />
             </div>
           </div>
         </section>
