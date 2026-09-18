@@ -461,6 +461,7 @@ export function OrangePiePage() {
               <a href="https://x.com/Orangepieai" target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter aria-hidden="true" /></a>
               <a href="https://in.pinterest.com/Orangepieai/" target="_blank" rel="noreferrer" aria-label="Pinterest"><FaPinterestP aria-hidden="true" /></a>
               <a href="https://www.linkedin.com/company/143884050/admin/dashboard/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn aria-hidden="true" /></a>
+              <span className="social-link-disabled" role="img" aria-label="Google Maps"><FaMapLocationDot aria-hidden="true" /></span>
             </nav>
           </div>
         </div>
