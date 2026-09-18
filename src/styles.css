@@ -120,13 +120,11 @@ h2 { font-size: clamp(2rem, 3vw, 2.0625rem); font-weight: 700; line-height: 1.22
 .direction-grid { position: relative; z-index: 1; display: grid; gap: 20px; }
 .direction-item { min-height: 330px; padding: 34px; border: 1px solid color-mix(in oklab, var(--background) 10%, transparent); border-radius: 6px; background: color-mix(in oklab, var(--background) 4%, transparent); transition: transform .3s ease, border-color .3s ease; }
 .direction-item:hover { transform: translateY(-5px); border-color: color-mix(in oklab, var(--primary) 60%, transparent); }
-.direction-item.mission { background: var(--primary); color: var(--primary-foreground); }
 .direction-label { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
-.direction-label span { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 6px; background: var(--primary); color: var(--primary-foreground); }
-.direction-item.mission .direction-label span { background: var(--charcoal); color: var(--primary); }
+.direction-label span { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 6px; background: var(--primary); color: #ffffff; }
 .direction-label h3 { font-size: 1.45rem; }
 .direction-item p { max-width: 560px; color: color-mix(in oklab, var(--background) 72%, transparent); font-size: 1.05rem; line-height: 1.7; }
-.direction-item.mission p { color: color-mix(in oklab, var(--primary-foreground) 82%, transparent); }
+
 .direction-item p + p { margin-top: 20px; }
 .direction-item strong { color: inherit; font-weight: 800; text-decoration: underline; text-decoration-color: currentColor; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
