@@ -70,6 +70,8 @@ h2 { font-size: clamp(2rem, 3vw, 2.0625rem); font-weight: 700; line-height: 1.22
 .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; width: min(1320px, calc(100% - 32px)); height: 72px; margin-inline: auto; }
 .wordmark { display: inline-flex; align-items: center; gap: 10px; width: fit-content; color: var(--foreground); font-size: 0.72rem; line-height: 1.15; }
 .wordmark strong { font-size: 0.82rem; font-weight: 800; }
+.header-logo { display: flex; width: fit-content; height: 44px; align-items: center; }
+.header-logo img { width: auto; height: 42px; object-fit: contain; }
 .brand-mark { position: relative; display: grid; width: 34px; height: 34px; place-items: center; border: 2px solid var(--primary); border-radius: 50%; }
 .brand-mark::before { content: ""; position: absolute; width: 8px; height: 22px; border: 2px solid var(--primary); border-radius: 9px; transform: rotate(35deg); }
 .brand-mark span { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); transform: translate(7px, -7px); }
@@ -247,8 +249,8 @@ h2 { font-size: clamp(2rem, 3vw, 2.0625rem); font-weight: 700; line-height: 1.22
 }
 
 @media (min-width: 960px) {
-  .header-inner { grid-template-columns: minmax(180px,1fr) auto minmax(180px,1fr); gap: 28px; height: 76px; }
-  .desktop-nav { display: flex; align-items: center; gap: 28px; }
+  .header-inner { grid-template-columns: minmax(190px,1fr) auto minmax(170px,1fr); gap: 20px; height: 76px; }
+  .desktop-nav { display: flex; align-items: center; gap: 20px; }
   .desktop-nav a { position: relative; padding-block: 12px; color: var(--ink-soft); font-size: .82rem; font-weight: 650; }
   .desktop-nav a::after { content: ""; position: absolute; right: 0; bottom: 5px; left: 0; height: 1px; background: var(--primary); transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
   .desktop-nav a:hover::after { transform: scaleX(1); }

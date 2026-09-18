@@ -33,11 +33,13 @@ import adventureImage from "../assets/play-adventure.jpg";
 import wellbeingImage from "../assets/wellbeing-lifestyle.jpg";
 import orangeEconomyImage from "../assets/orange-economy.jpg";
 import collaborationImage from "../assets/community-collaboration.jpg";
+import logoAsset from "../assets/OPC_logo_png.png.asset.json";
 
 const navItems = [
   ["About", "about"],
   ["Who Can Join", "who-can-join"],
   ["Why to Join", "why-join"],
+  ["What to Explore", "explore-interests"],
   ["FAQs", "faqs"],
 ] as const;
 
@@ -171,6 +173,14 @@ const faqs = [
 ] as const;
 
 function Wordmark({ light = false }: { light?: boolean }) {
+  if (!light) {
+    return (
+      <a href="#top" className="header-logo" aria-label="Orange Pie Community home">
+        <img src={logoAsset.url} alt="Orange Pie Community" />
+      </a>
+    );
+  }
+
   return (
     <a href="#top" className={`wordmark ${light ? "wordmark-light" : ""}`} aria-label="Orange Pie Community home">
       <span className="brand-mark" aria-hidden="true"><span /></span>
@@ -322,7 +332,7 @@ export function OrangePiePage() {
           </div>
         </section>
 
-        <section className="section creative-universe" aria-labelledby="creative-universe-title">
+        <section id="explore-interests" className="section creative-universe" aria-labelledby="creative-universe-title">
           <div className="page-width">
             <div className="universe-heading">
               <p className="eyebrow">EXPLORE YOUR INTERESTS</p>
