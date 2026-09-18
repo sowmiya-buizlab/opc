@@ -264,7 +264,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.0625rem); font-weight: 700; line-height: 1.22
   .desktop-nav a:hover::after { transform: scaleX(1); }
   .header-cta { display: inline-flex; min-height: 44px; align-items: center; justify-self: end; gap: 10px; padding-inline: 16px; border-radius: var(--radius); background: var(--primary); color: #ffffff; font-size: .78rem; font-weight: 800; }
   .menu-button { display: none; }
-  .hero { min-height: 84svh; }
+  .hero { min-height: 78svh; }
   .hero-grid { grid-template-columns: minmax(0, .92fr); align-items: center; }
   .hero h1 { font-size: clamp(3.4rem, 4.6vw, 4.5rem); }
   .economy-grid { grid-template-columns: minmax(0,1fr) minmax(420px,.9fr); gap: 80px; }
@@ -293,7 +293,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.0625rem); font-weight: 700; line-height: 1.22
 
 @media (min-width: 1280px) {
   .section { padding-block: 112px; }
-  .hero { padding-top: 130px; padding-bottom: 130px; }
+  .hero { padding-top: 104px; padding-bottom: 116px; }
 }
 
 @media (max-width: 420px) {
