@@ -4,3 +4,5 @@
 - [x] Create the bespoke hero artwork and Indian community imagery.
 - [x] Add responsive navigation, anchored actions, registration form, and accessible FAQs.
 - [x] Validate build, content, interactions, image cropping, and 375/768/1024/1440 layouts.
+- [ ] Apply the selected premium redesign, add Creative Universe, and expand Experiences.
+- [ ] Validate the redesigned page across mobile, tablet, and desktop.
