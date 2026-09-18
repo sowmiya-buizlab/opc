@@ -288,6 +288,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.0625rem); font-weight: 700; line-height: 1.22
   .registration-intro { position: sticky; top: 128px; }
   .faq-grid { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 100px; }
   .footer-grid { grid-template-columns: minmax(0,1fr) auto auto minmax(0,1fr); align-items: center; gap: 48px; }
+  .social-links { display: grid; grid-template-columns: repeat(4, 42px); justify-content: center; }
 }
 
 @media (min-width: 1280px) {
