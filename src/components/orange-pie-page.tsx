@@ -52,6 +52,7 @@ import footerLogoAsset from "../assets/OPC_logo_black_BG_png.png.asset.json";
 import atplLogo from "../assets/ATPL_1_logo.png.asset.json";
 import savemomLogo from "../assets/Savemom_2.png.asset.json";
 import buizlabLogo from "../assets/Buizlab_Logo_1.png.asset.json";
+import digitallLogo from "../assets/Digitall_white_BG.png.asset.json";
 
 const WHATSAPP_URL = "https://chat.whatsapp.com/LX2JpMqRa13IyIdP024twV";
 
@@ -79,8 +80,7 @@ const learningDomains = [
   ["Media & Entertainment", "Learn to tell stories through pictures, movement, and sound.", "Film • Photography • Video • Editing • Animation • VFX • Music", Clapperboard],
   ["Creator, Brand & Marketing", "Create content and help businesses share their stories and reach people.", "Content • Branding • Digital Marketing • Advertising • Communication", Megaphone],
   ["Innovation & Design Thinking", "Understand a problem, explore ideas, and find better ways to solve it.", "Problem Solving • Product Thinking • Entrepreneurship • Innovation", BrainCircuit],
-  ["AI & Creative Technology", "Explore how AI tools can help you develop ideas and create.", "Generative AI • AI Design • AI Video • AI Content • Creative AI", Cpu],
-  ["Immersive & Maker Technology", "Create digital worlds, interactive experiences, and physical models.", "AR • VR • XR • 3D • 3D Printing • Interactive Experiences", Compass],
+  ["AI & Immersive Technology", "Explore AI tools, create digital worlds, and bring ideas to life through interactive experiences and physical models.", "Generative AI • AI Design • AI Content • AR • VR • XR • 3D • 3D Printing", Cpu],
   ["Arts, Culture & Heritage", "Express yourself through art and explore the traditions and stories around you.", "Art • Crafts • Music • Literature • Folk Arts • Heritage", Landmark],
 ] as const;
 
@@ -112,7 +112,7 @@ const givingOptions = [
 const faqs = [
   ["Who can join?", "Anyone interested in learning, creating, or contributing. You can be a student, professional, business owner, homemaker, artist, or someone exploring a new interest."],
   ["Do I need experience or a creative qualification?", "No. You can begin with curiosity and a willingness to learn."],
-  ["What can I learn?", "You can explore seven creative domains covering design, media, marketing, innovation, AI, immersive technology, arts, and culture."],
+  ["What can I learn?", "You can explore six creative domains covering design, media, marketing, innovation, AI, immersive technology, arts, and culture."],
   ["Can I explore more than one domain?", "Yes. You can join multiple interest circles within one Orange Pie Community."],
   ["Can women and homemakers participate?", "Yes. Women and homemakers are welcome to learn, build confidence, share their abilities, and explore new possibilities."],
   ["Can companies and institutions collaborate?", "Yes. They can express interest in sharing expertise, supporting practical learning, and helping emerging talent and ideas grow."],
@@ -165,8 +165,8 @@ export function OrangePiePage() {
         <section className="section direction" aria-labelledby="direction-title"><div className="page-width">
           <div className="direction-heading"><p className="eyebrow">OUR VISION &amp; MISSION</p><h2 id="direction-title">A better future begins<br />with what we can imagine today.</h2></div>
           <div className="direction-grid">
-            <article className="direction-item"><div className="direction-label"><span><Eye size={23} aria-hidden="true" /></span><h3>Our Vision</h3></div><p>A future where people use <strong>Kreativity</strong> to find what is missing, imagine better ways, and create solutions that improve lives.</p></article>
-            <article className="direction-item"><div className="direction-label"><span><Zap size={23} aria-hidden="true" /></span><h3>Our Mission</h3></div><p>Bring structured <strong>Kreativity</strong> learning into schools, colleges, workplaces, and everyday life—helping people discover their strengths, build their skills, and use what they learn. Need to create <strong>2–3 lakh</strong> creative talents across <strong>Tamil Nadu</strong>. By <strong>2030</strong>. This is to help more people turn their <strong>Kreativity</strong> into meaningful work, ideas, and contributions.</p></article>
+            <article className="direction-item"><div className="direction-label"><span><Eye size={23} aria-hidden="true" /></span><h3>Our Vision</h3></div><ul><li>A future where everyone can discover and use their <strong>Kreativity</strong>.</li><li>People who notice what is missing and imagine better ways.</li><li>Creative ideas that become useful solutions and improve everyday lives.</li><li>Communities that grow through new skills, meaningful work, and shared opportunities.</li></ul></article>
+            <article className="direction-item"><div className="direction-label"><span><Zap size={23} aria-hidden="true" /></span><h3>Our Mission</h3></div><ul><li>Bring structured <strong>Kreativity</strong> learning into schools, colleges, workplaces, and everyday life.</li><li>Help people discover their strengths, build skills, and apply their learning.</li><li>Connect people through creative activities, shared projects, and industry experiences.</li><li>Develop <strong>2–3 lakh creative talents</strong> across <strong>Tamil Nadu by 2030</strong>.</li></ul></article>
           </div>
         </div></section>
 
@@ -177,9 +177,9 @@ export function OrangePiePage() {
         </div></section>
 
         <section id="what-you-can-learn" className="section learning" aria-labelledby="learning-title"><div className="page-width">
-          <div className="learning-heading"><p className="eyebrow">WHAT YOU CAN LEARN</p><h2 id="learning-title">Follow an interest.<br /><span>Discover a new one.</span></h2><p>Explore learning across seven creative domains. Begin with what you enjoy and discover where it can take you.</p></div>
+          <div className="learning-heading"><p className="eyebrow">WHAT YOU CAN LEARN</p><h2 id="learning-title">Follow an interest.<br /><span>Discover a new one.</span></h2><p>Explore learning across six creative domains. Begin with what you enjoy and discover where it can take you.</p></div>
           <div className="learning-grid">{learningDomains.map(([title, description, interests, Icon]) => <article className="learning-card" key={title}><span className="domain-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p><p className="domain-interests">{interests}</p></article>)}</div>
-          <div className="learning-close"><p>You can join different interest circles within one Orange Pie Community.</p><p>Explore art and AI. Connect design with business. Bring storytelling into technology.</p><WhatsAppLink>Join Our WhatsApp Community</WhatsAppLink></div>
+          <div className="learning-close"><div><p>You can join different interest circles within one Orange Pie Community.</p><p>Explore art and AI. Connect design with business. Bring storytelling into technology.</p></div><WhatsAppLink>Join Our WhatsApp Community</WhatsAppLink></div>
         </div></section>
 
         <section className="section economy" aria-labelledby="economy-title"><div className="page-width economy-grid">
@@ -206,25 +206,24 @@ export function OrangePiePage() {
 
         <section id="events" className="section events" aria-labelledby="events-title"><div className="page-width events-layout">
           <div><p className="eyebrow">COMMUNITY EVENTS</p><h2 id="events-title">Find your interest.<br /><span>Join the experience.</span></h2></div>
-          <div className="events-copy"><p>From creative workshops and industry talks to cultural events and outdoor activities, find something you enjoy or try something new.</p><p>Meet people, share ideas, and explore your Kreativity together.</p></div>
+          <div className="events-copy"><p>From creative workshops and industry talks to cultural events and outdoor activities, find something you enjoy or try something new.</p><p>Meet people, share ideas, and explore your Kreativity together.</p><WhatsAppLink>Explore Event</WhatsAppLink></div>
         </div></section>
 
         <section id="casebook" className="section casebook" aria-labelledby="casebook-title"><div className="page-width casebook-grid">
-          <div className="casebook-intro"><p className="eyebrow">CASEBOOK</p><h2 id="casebook-title">What comes next?<br /><span>when your idea won.</span></h2><p><strong>A hackathon or ideathon win can be the start of a bigger journey.</strong></p><p><strong>Casebook is a planned platform for student winners to take their ideas beyond the competition.</strong></p><p>It will bring participants together with invited startups, venture representatives, CEOs, and industry leaders to explore how their ideas can move forward.</p></div>
-          <div className="casebook-steps"><article><span>01</span><h3>Present Your Idea</h3><p>Explain the problem, your solution, and what you have created.</p></article><article><span>02</span><h3>Hear Different Perspectives</h3><p>Learn from questions and feedback that can help you strengthen your idea.</p></article><article><span>03</span><h3>Explore Your Next Step</h3><p>Build connections and explore possibilities for further development and collaboration.</p></article><p className="casebook-close">Give your idea a chance to go further.</p><a href="#registration" className="action-link"><span>Explore Casebook</span><ArrowRight size={18} aria-hidden="true" /></a></div>
+          <div className="casebook-intro"><p className="eyebrow">CASEBOOK</p><h2 id="casebook-title">What comes next?<br /><span>when your idea won.</span></h2><p><strong>A hackathon or ideathon win can be the start of a bigger journey.</strong></p><p><strong>Casebook is a planned platform for student winners to take their ideas beyond the competition.</strong></p><p>It will bring participants together with invited startups, venture representatives, CEOs, and industry leaders to explore how their ideas can move forward.</p><div className="casebook-action"><p className="casebook-close">Give your idea a chance to go further.</p><a href="#registration" className="action-link"><span>Explore Casebook</span><ArrowRight size={18} aria-hidden="true" /></a></div></div>
+          <div className="casebook-steps"><article><span>01</span><h3>Present Your Idea</h3><p>Explain the problem, your solution, and what you have created.</p></article><article><span>02</span><h3>Hear Different Perspectives</h3><p>Learn from questions and feedback that can help you strengthen your idea.</p></article><article><span>03</span><h3>Explore Your Next Step</h3><p>Build connections and explore possibilities for further development and collaboration.</p></article></div>
         </div></section>
 
         <section className="section collaborators" aria-labelledby="collaborators-title"><div className="page-width">
           <div className="section-heading centered"><p className="eyebrow">OUR COLLABORATORS</p><h2 id="collaborators-title">Together, we create more possibilities.</h2><p>Meet the companies working with Orange Pie Community to help people learn, connect, and grow.</p></div>
           <div className="logo-wall">
-            <figure><img src={buizlabLogo.url} alt="Buiz Lab" /></figure><figure><img src={savemomLogo.url} alt="Savemom" /></figure><figure><img src={atplLogo.url} alt="Auroversity Technologies" /></figure>
+             <figure><img src={buizlabLogo.url} alt="Buiz Lab" /></figure><figure><img src={savemomLogo.url} alt="Savemom" /></figure><figure><img src={atplLogo.url} alt="Auroversity Technologies" /></figure><figure><img src={digitallLogo.url} alt="Digitall Digital Transformation Forum" /></figure>
           </div>
         </div></section>
 
         <section className="section give-back" aria-labelledby="give-back-title"><div className="page-width">
           <div className="give-heading"><p className="eyebrow">GIVE BACK TO THE COMMUNITY</p><h2 id="give-back-title">What you share.<br /><span>Be someone&apos;s next possibility.</span></h2><p>Your time, knowledge, or support can help someone discover their Kreativity and build their skills. Whether you are an individual, a company, or an institution, there is a way to contribute.</p></div>
-          <div className="giving-grid">{givingOptions.map(([title, description, Icon]) => <article key={title}><Icon size={24} aria-hidden="true" /><h3>{title}</h3><p>{description}</p></article>)}</div>
-          <a href="#registration" className="action-link"><span>Give Back to the Community</span><ArrowRight size={18} aria-hidden="true" /></a>
+          <div className="give-layout"><div className="giving-list">{givingOptions.map(([title, description, Icon], index) => <article key={title}><span className="giving-number">0{index + 1}</span><Icon size={23} aria-hidden="true" /><div><h3>{title}</h3><p>{description}</p></div></article>)}</div><a href="#registration" className="action-link"><span>Give Back to the Community</span><ArrowRight size={18} aria-hidden="true" /></a></div>
         </div></section>
 
         <section id="faqs" className="section faqs" aria-labelledby="faq-title"><div className="page-width faq-grid">
