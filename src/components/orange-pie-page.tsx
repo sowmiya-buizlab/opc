@@ -49,7 +49,6 @@ import orangeEconomyImage from "../assets/orange-economy.jpg";
 import collaborationImage from "../assets/community-collaboration.jpg";
 import logoAsset from "../assets/OPC_logo_png.png.asset.json";
 import footerLogoAsset from "../assets/OPC_logo_black_BG_png.png.asset.json";
-import digitallLogo from "../assets/Digitall_white_BG.png.asset.json";
 import atplLogo from "../assets/ATPL_1_logo.png.asset.json";
 import savemomLogo from "../assets/Savemom_2.png.asset.json";
 import buizlabLogo from "../assets/Buizlab_Logo_1.png.asset.json";
@@ -218,7 +217,7 @@ export function OrangePiePage() {
         <section className="section collaborators" aria-labelledby="collaborators-title"><div className="page-width">
           <div className="section-heading centered"><p className="eyebrow">OUR COLLABORATORS</p><h2 id="collaborators-title">Together, we create more possibilities.</h2><p>Meet the companies working with Orange Pie Community to help people learn, connect, and grow.</p></div>
           <div className="logo-wall">
-            <figure><img src={buizlabLogo.url} alt="Buiz Lab" /></figure><figure><img src={savemomLogo.url} alt="Savemom" /></figure><figure><img src={atplLogo.url} alt="Auroversity Technologies" /></figure><figure><img src={digitallLogo.url} alt="Digitall Digital Transformation Forum" /></figure>
+            <figure><img src={buizlabLogo.url} alt="Buiz Lab" /></figure><figure><img src={savemomLogo.url} alt="Savemom" /></figure><figure><img src={atplLogo.url} alt="Auroversity Technologies" /></figure>
           </div>
         </div></section>
 
