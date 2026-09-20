@@ -222,8 +222,10 @@ export function OrangePiePage() {
         </div></section>
 
         <section className="section give-back" aria-labelledby="give-back-title"><div className="page-width">
-          <div className="give-heading"><p className="eyebrow">GIVE BACK TO THE COMMUNITY</p><h2 id="give-back-title">What you share.<br /><span>Be someone&apos;s next possibility.</span></h2><p>Your time, knowledge, or support can help someone discover their Kreativity and build their skills. Whether you are an individual, a company, or an institution, there is a way to contribute.</p></div>
-          <div className="give-layout"><div className="giving-list">{givingOptions.map(([title, description, Icon], index) => <article key={title}><span className="giving-number">0{index + 1}</span><Icon size={23} aria-hidden="true" /><div><h3>{title}</h3><p>{description}</p></div></article>)}</div><a href="#registration" className="action-link"><span>Give Back to the Community</span><ArrowRight size={18} aria-hidden="true" /></a></div>
+          <div className="give-layout">
+            <div className="give-heading"><p className="eyebrow">GIVE BACK TO THE COMMUNITY</p><h2 id="give-back-title">What you share.<br /><span>Be someone&apos;s next possibility.</span></h2><p>Your time, knowledge, or support can help someone discover their Kreativity and build their skills. Whether you are an individual, a company, or an institution, there is a way to contribute.</p><a href="#registration" className="action-link"><span>Giveback to the comunity</span><ArrowRight size={18} aria-hidden="true" /></a></div>
+            <div className="giving-list">{givingOptions.map(([title, description, Icon], index) => <article key={title}><span className="giving-number">0{index + 1}</span><Icon size={23} aria-hidden="true" /><div><h3>{title}</h3><p>{description}</p></div></article>)}</div>
+          </div>
         </div></section>
 
         <section id="faqs" className="section faqs" aria-labelledby="faq-title"><div className="page-width faq-grid">
