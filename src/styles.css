@@ -105,7 +105,9 @@ h2 span { color: var(--primary); }
 .direction-label { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
 .direction-label span { display: grid; width: 52px; height: 52px; place-items: center; border-radius: 6px; background: var(--primary); color: var(--primary-foreground); }
 .direction-label h3 { font-size: 1.4rem; }
-.direction-item p { color: color-mix(in oklab, var(--background) 76%, transparent); font-size: 1.03rem; line-height: 1.73; }
+.direction-item ul { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.direction-item li { position: relative; padding-left: 22px; color: color-mix(in oklab, var(--background) 76%, transparent); font-size: .98rem; line-height: 1.65; }
+.direction-item li::before { content: ""; position: absolute; top: .65em; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); }
 .direction-item strong { color: var(--background); }
 
 .audiences { background: var(--surface); }
@@ -127,7 +129,7 @@ h2 span { color: var(--primary); }
 .learning-card h3 { font-size: 1.1rem; line-height: 1.4; }
 .learning-card > p { margin-top: 11px; color: var(--ink-soft); font-size: .9rem; line-height: 1.62; }
 .learning-card .domain-interests { padding-top: 15px; border-top: 1px solid var(--border); color: var(--foreground); font-size: .78rem; font-weight: 700; line-height: 1.75; }
-.learning-close { max-width: 820px; margin-top: 52px; padding-left: 24px; border-left: 4px solid var(--primary); }
+.learning-close { display: flex; flex-direction: column; align-items: start; max-width: none; gap: 8px 28px; margin-top: 52px; padding-left: 24px; border-left: 4px solid var(--primary); }
 .learning-close p { margin-top: 8px; color: var(--ink-soft); font-size: 1rem; line-height: 1.65; }
 
 .economy { position: relative; background: var(--charcoal); color: var(--background); }
@@ -157,12 +159,13 @@ h2 span { color: var(--primary); }
 .experience-footer { display: flex; flex-direction: column; align-items: start; margin-top: 38px; }
 .experience-footer > p { max-width: 620px; font-size: 1.15rem; font-weight: 650; line-height: 1.55; }
 
-.events { position: relative; overflow: hidden; background: var(--primary); color: var(--primary-foreground); }
+.events { position: relative; overflow: hidden; background: var(--charcoal); color: var(--background); }
 .events::after { content: ""; position: absolute; top: 50%; right: -80px; width: 280px; height: 280px; border: 48px solid color-mix(in oklab, var(--background) 17%, transparent); border-radius: 50%; transform: translateY(-50%); }
-.events .eyebrow { color: var(--primary-foreground); opacity: .75; }
-.events h2 span { color: var(--primary-foreground); }
+.events .eyebrow { color: var(--primary); }
+.events h2 span { color: var(--primary); }
 .events-layout { position: relative; z-index: 1; display: grid; gap: 36px; align-items: end; }
 .events-copy { display: grid; max-width: 590px; gap: 18px; font-size: 1.05rem; line-height: 1.72; }
+.events-copy .action-link { width: fit-content; margin-top: 10px; }
 
 .casebook { background: var(--background); }
 .casebook-grid { display: grid; gap: 50px; }
@@ -174,6 +177,7 @@ h2 span { color: var(--primary); }
 .casebook-steps h3 { font-size: 1.08rem; }
 .casebook-steps p { color: var(--ink-soft); font-size: .92rem; line-height: 1.62; }
 .casebook-close { margin-top: 28px; color: var(--foreground) !important; font-size: 1.15rem !important; font-weight: 700; }
+.casebook-action .action-link { margin-top: 20px; }
 
 .collaborators { border-block: 1px solid var(--border); background: var(--surface); }
 .logo-wall { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
@@ -183,11 +187,14 @@ h2 span { color: var(--primary); }
 .give-back { background: var(--charcoal); color: var(--background); }
 .give-heading { max-width: 820px; margin-bottom: 48px; }
 .give-heading > p:last-child { max-width: 690px; margin-top: 22px; color: color-mix(in oklab, var(--background) 74%, transparent); font-size: 1rem; line-height: 1.7; }
-.giving-grid { display: grid; gap: 14px; }
-.giving-grid article { padding: 26px; border: 1px solid color-mix(in oklab, var(--background) 12%, transparent); border-radius: 6px; background: color-mix(in oklab, var(--background) 4%, transparent); }
-.giving-grid svg { margin-bottom: 28px; color: var(--primary); }
-.giving-grid h3 { font-size: 1.08rem; }
-.giving-grid p { margin-top: 11px; color: color-mix(in oklab, var(--background) 70%, transparent); font-size: .9rem; line-height: 1.62; }
+.give-layout { display: grid; gap: 36px; }
+.giving-list { border-top: 1px solid color-mix(in oklab, var(--background) 15%, transparent); }
+.giving-list article { display: grid; grid-template-columns: 30px 42px minmax(0,1fr); align-items: start; gap: 14px; padding-block: 22px; border-bottom: 1px solid color-mix(in oklab, var(--background) 15%, transparent); }
+.giving-number { padding-top: 4px; color: var(--primary); font-family: var(--font-display); font-size: .72rem; font-weight: 700; }
+.giving-list svg { color: var(--primary); }
+.giving-list h3 { font-size: 1.08rem; }
+.giving-list p { margin-top: 7px; color: color-mix(in oklab, var(--background) 70%, transparent); font-size: .9rem; line-height: 1.62; }
+.give-layout > .action-link { width: fit-content; margin-top: 0; }
 
 .faq-grid { display: grid; gap: 42px; }
 .accordion { border-top: 1px solid var(--border); }
@@ -235,7 +242,7 @@ h2 span { color: var(--primary); }
 
 @media (min-width: 640px) {
   .page-width { width: min(1200px, calc(100% - 64px)); }
-  .audience-grid, .learning-grid, .giving-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .audience-grid, .learning-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .field-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .registration-form { padding: 38px; }
 }
@@ -245,6 +252,8 @@ h2 span { color: var(--primary); }
   .experience-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .experience-footer { flex-direction: row; align-items: center; justify-content: space-between; gap: 30px; }
   .experience-footer .action-link { margin-top: 0; flex-shrink: 0; }
+  .learning-close { flex-direction: row; align-items: center; justify-content: space-between; }
+  .learning-close .action-link { flex-shrink: 0; margin-top: 0; }
   .events-layout { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 70px; }
   .logo-wall { grid-template-columns: repeat(4,minmax(0,1fr)); }
   .footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); align-items: center; gap: 48px 56px; }
@@ -264,13 +273,12 @@ h2 span { color: var(--primary); }
   .direction-item { padding: 40px; }
   .audience-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
   .learning-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
-  .learning-card:last-child { grid-column: 2; }
   .economy-grid { grid-template-columns: minmax(0,1fr) minmax(410px,.9fr); gap: 78px; }
   .benefit { grid-template-columns: 38px 44px minmax(210px,.75fr) minmax(0,1.25fr); gap: 18px; padding-block: 28px; }
   .benefit p { grid-column: auto; }
   .experience-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
   .casebook-grid { grid-template-columns: minmax(0,1fr) minmax(450px,.9fr); gap: 90px; }
-  .giving-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
+  .give-layout { grid-template-columns: minmax(0,1fr) auto; align-items: end; }
   .faq-grid { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 90px; }
   .registration-grid { grid-template-columns: minmax(0,.85fr) minmax(540px,1.15fr); gap: 86px; align-items: start; }
   .registration-intro { position: sticky; top: 126px; }
