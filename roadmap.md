@@ -9,4 +9,4 @@
 - [x] Add the What to Explore navigation link and apply the supplied Orange Pie logo.
 - [x] Redesign the footer with the supplied dark logo, social links, and copyright row.
 - [x] Redesign the full website to match the revised sixteen-section PDF brief and collaborator logos.
-- [ ] Apply the corrected PDF updates to Vision and Mission, learning, Events, Casebook, Collaborators, and Give Back.
+- [x] Apply the corrected PDF updates to Vision and Mission, learning, Events, Casebook, Collaborators, and Give Back.

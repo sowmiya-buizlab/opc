@@ -112,7 +112,7 @@ const givingOptions = [
 const faqs = [
   ["Who can join?", "Anyone interested in learning, creating, or contributing. You can be a student, professional, business owner, homemaker, artist, or someone exploring a new interest."],
   ["Do I need experience or a creative qualification?", "No. You can begin with curiosity and a willingness to learn."],
-  ["What can I learn?", "You can explore seven creative domains covering design, media, marketing, innovation, AI, immersive technology, arts, and culture."],
+  ["What can I learn?", "You can explore six creative domains covering design, media, marketing, innovation, AI, immersive technology, arts, and culture."],
   ["Can I explore more than one domain?", "Yes. You can join multiple interest circles within one Orange Pie Community."],
   ["Can women and homemakers participate?", "Yes. Women and homemakers are welcome to learn, build confidence, share their abilities, and explore new possibilities."],
   ["Can companies and institutions collaborate?", "Yes. They can express interest in sharing expertise, supporting practical learning, and helping emerging talent and ideas grow."],
