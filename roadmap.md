@@ -8,3 +8,4 @@
 - [x] Validate the redesigned page across mobile, tablet, and desktop.
 - [x] Add the What to Explore navigation link and apply the supplied Orange Pie logo.
 - [x] Redesign the footer with the supplied dark logo, social links, and copyright row.
+- [x] Redesign the full website to match the revised sixteen-section PDF brief and collaborator logos.
