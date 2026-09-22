@@ -155,10 +155,15 @@ h2 span { color: var(--primary); }
 
 .collaborators { border-block: 1px solid var(--border); background: var(--surface); }
 .collaborators .section-heading .action-link { color: var(--primary-foreground); }
-.logo-wall { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x proximity; scrollbar-width: thin; }
-.logo-wall figure { display: grid; flex: 0 0 min(270px,78vw); min-height: 145px; margin: 0; padding: 22px; place-items: center; border: 1px solid var(--border); border-radius: 6px; background: var(--background); scroll-snap-align: start; }
-.logo-wall img { width: 100%; max-width: 220px; max-height: 86px; object-fit: contain; }
-.logo-wall figure:last-child img { max-width: 245px; max-height: 95px; }
+.logo-wall { overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+.logo-track { display: flex; gap: 12px; width: max-content; animation: logo-marquee 28s linear infinite; }
+.logo-wall:hover .logo-track { animation-play-state: paused; }
+.logo-track-dup { display: contents; }
+.logo-track figure { display: grid; flex: 0 0 min(270px,78vw); min-height: 145px; margin: 0; padding: 22px; place-items: center; border: 1px solid var(--border); border-radius: 6px; background: var(--background); }
+.logo-track img { width: 100%; max-width: 220px; max-height: 86px; object-fit: contain; }
+.logo-track figure:last-child img { max-width: 245px; max-height: 95px; }
+@keyframes logo-marquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 6px)); } }
+@media (prefers-reduced-motion: reduce) { .logo-track { animation: none; } }
 
 .give-back { background: var(--charcoal); color: var(--background); }
 .give-layout { display: grid; gap: 46px; align-items: start; }
