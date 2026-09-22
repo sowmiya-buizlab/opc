@@ -10,7 +10,7 @@
 - [x] Redesign the footer with the supplied dark logo, social links, and copyright row.
 - [x] Redesign the full website to match the revised sixteen-section PDF brief and collaborator logos.
 - [x] Apply the corrected PDF updates to Vision and Mission, learning, Events, Casebook, Collaborators, and Give Back.
-- [ ] Rebuild the landing page around the new OPC 2030 PDF content and navigation.
-- [ ] Prepare and apply the supplied OPC 2030 logo variants across the header, banner, and footer.
-- [ ] Create the revised seven-domain learning and six-experience layouts with updated imagery.
+- [x] Rebuild the landing page around the new OPC 2030 PDF content and navigation.
+- [x] Prepare and apply the supplied OPC 2030 logo variants across the header, banner, and footer.
+- [x] Create the revised seven-domain learning and six-experience layouts with updated imagery.
 - [ ] Verify copy, WhatsApp actions, anchors, accessibility, and responsive layouts.
