@@ -14,3 +14,4 @@
 - [x] Prepare and apply the supplied OPC 2030 logo variants across the header, banner, and footer.
 - [x] Create the revised seven-domain learning and six-experience layouts with updated imagery.
 - [x] Verify copy, WhatsApp actions, anchors, accessibility, and responsive layouts.
+- [x] Apply the latest PDF corrections: hero mark removal, section alignment, collaborator logos, and footer layout.
