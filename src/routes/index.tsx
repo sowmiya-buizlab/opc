@@ -4,10 +4,10 @@ import { OrangePiePage } from "../components/orange-pie-page";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Orange Pie Community | Learn, Create and Connect" },
-      { name: "description", content: "Explore creative learning, community events, seven interest domains, and new possibilities with Orange Pie Community." },
-      { property: "og:title", content: "Orange Pie Community | Learn, Create and Connect" },
-      { property: "og:description", content: "Explore creative learning, community events, seven interest domains, and new possibilities with Orange Pie Community." },
+      { title: "OPC 2030 | Community for 3 Lakh Kreators" },
+      { name: "description", content: "Join OPC 2030, a community bringing together 3 lakh Kreators to learn, connect, create, and uplift the Orange Economy." },
+      { property: "og:title", content: "OPC 2030 | Community for 3 Lakh Kreators" },
+      { property: "og:description", content: "Join OPC 2030, a community bringing together 3 lakh Kreators to learn, connect, create, and uplift the Orange Economy." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
