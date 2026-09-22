@@ -40,7 +40,7 @@ import sportsImage from "../assets/experience-sports-play.jpg";
 import hackathonImage from "../assets/experience-hackathons.jpg";
 import workshopImage from "../assets/experience-workshops.jpg";
 import artsImage from "../assets/experience-arts-culture.jpg";
-import headerLogo from "../assets/opc2030-header-v4.png.asset.json";
+import headerLogo from "../assets/orangepie-community-logo.png.asset.json";
 import bannerLogo from "../assets/opc2030-banner-v2.png.asset.json";
 import footerLogo from "../assets/opc2030-footer-v4.png.asset.json";
 import atplLogo from "../assets/ATPL_1_logo.png.asset.json";
@@ -117,7 +117,7 @@ export function OrangePiePage() {
   return <div id="top" className="site-shell">
     <header className="site-header">
       <div className="header-inner">
-        <a href="#top" className="header-logo" aria-label="OPC 2030 home"><img src={headerLogo.url} alt="OPC 2030 — Community for 3L Kreators" /></a>
+        <a href="#top" className="header-logo" aria-label="Orangepie Community home"><img src={headerLogo.url} alt="Orangepie Community — Human. Powered by Kreativity" /></a>
         <nav className="desktop-nav" aria-label="Main navigation">{navItems.map(([label,id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav>
         <WhatsAppLink className="header-cta">Join OPC 2030 Community</WhatsAppLink>
         <button className="menu-button" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-menu" aria-label={menuOpen ? "Close menu" : "Open menu"}>{menuOpen ? <X /> : <Menu />}</button>
