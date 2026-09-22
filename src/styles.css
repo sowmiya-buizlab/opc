@@ -180,18 +180,18 @@ h2 span { color: var(--primary); }
 .accordion details[open] summary svg { transform: rotate(180deg); }
 .accordion details p { max-width: 650px; padding: 0 44px 24px 4px; color: var(--ink-soft); font-size: .96rem; line-height: 1.66; }
 
-.footer-main { position: relative; overflow: hidden; padding-block: 58px; background: var(--charcoal); color: var(--background); }
+.footer-main { position: relative; overflow: hidden; padding-block: 52px; background: var(--charcoal); color: var(--background); }
 .footer-main::before { content: ""; position: absolute; top: 0; right: 0; width: 38%; height: 3px; background: var(--primary); }
-.footer-grid { position: relative; display: grid; gap: 34px; align-items: start; justify-items: start; text-align: left; }
-.footer-brand { display: block; width: min(210px,100%); }
-.footer-brand img { width: 100%; height: auto; object-fit: contain; }
+.footer-grid { position: relative; display: grid; grid-template-columns: minmax(0,1fr); gap: 34px; align-items: start; justify-items: start; text-align: left; }
+.footer-brand { display: block; width: min(220px,100%); }
+.footer-brand img { display: block; width: 100%; height: auto; object-fit: contain; }
 .footer-title,.footer-contact h2 { margin-bottom: 8px; color: var(--primary); font-family: var(--font-sans); font-size: .76rem; font-weight: 800; }
-.footer-follow-title { margin-top: 19px; }
 .footer-column,.footer-contact,.footer-links { display: grid; align-content: start; justify-items: start; gap: 9px; }
+.footer-column-without-title { padding-top: 0; }
 .footer-contact a,.footer-links a { width: fit-content; color: color-mix(in oklab,var(--background) 76%,transparent); font-size: .86rem; line-height: 1.45; transition: color .2s ease; }
 .footer-contact a:hover,.footer-links a:hover { color: var(--primary); }
-.social-links { display: grid; grid-template-columns: repeat(4,42px); gap: 12px; }
-.social-links a { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid color-mix(in oklab,var(--background) 22%,transparent); border-radius: 50%; color: var(--background); }
+.social-links { display: grid; grid-template-columns: repeat(4,40px); gap: 10px; margin-top: 12px; }
+.social-links a { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid color-mix(in oklab,var(--background) 22%,transparent); border-radius: 50%; color: var(--background); }
 .social-links a:hover { border-color: var(--primary); background: var(--primary); }
 .social-links svg { width: 18px; height: 18px; }
 .footer-legal { padding-block: 23px; border-top: 1px solid var(--border); background: var(--background); }
@@ -207,7 +207,8 @@ h2 span { color: var(--primary); }
   .learning-close { flex-direction: row; align-items: center; justify-content: space-between; }
   .learning-close .action-link { flex-shrink: 0; margin-top: 0; }
   .events-layout { grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr); gap: 70px; }
-  .footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 46px 56px; }
+  .footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 46px 64px; }
+  .footer-column-without-title { padding-top: 0; }
 }
 @media (min-width:1100px) {
   .header-inner { grid-template-columns: 180px minmax(0,1fr) auto; gap: 18px; min-height: 82px; }
@@ -227,8 +228,9 @@ h2 span { color: var(--primary); }
   .casebook-grid { grid-template-columns: minmax(0,1fr) minmax(450px,.9fr); gap: 90px; }
   .give-layout { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 68px; }
   .faq-grid { grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 90px; }
-  .footer-main { padding-block: 70px; }
-  .footer-grid { grid-template-columns: minmax(190px,.9fr) minmax(0,.72fr) minmax(0,.82fr) minmax(240px,1fr); align-items: center; gap: 48px; }
+  .footer-main { padding-block: 64px; }
+  .footer-grid { grid-template-columns: minmax(210px,1.05fr) minmax(135px,.7fr) minmax(165px,.85fr) minmax(260px,1.15fr); align-items: center; gap: clamp(32px,4vw,64px); }
+  .footer-column-without-title { padding-top: 24px; }
 }
 @media (min-width:1280px) { .section { padding-block: 108px; } }
 @media (max-width:420px) {
