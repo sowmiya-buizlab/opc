@@ -13,4 +13,4 @@
 - [x] Rebuild the landing page around the new OPC 2030 PDF content and navigation.
 - [x] Prepare and apply the supplied OPC 2030 logo variants across the header, banner, and footer.
 - [x] Create the revised seven-domain learning and six-experience layouts with updated imagery.
-- [ ] Verify copy, WhatsApp actions, anchors, accessibility, and responsive layouts.
+- [x] Verify copy, WhatsApp actions, anchors, accessibility, and responsive layouts.
