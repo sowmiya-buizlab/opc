@@ -115,6 +115,80 @@ const faqs = [
   ["Can companies and institutions collaborate?", "Yes. They can express interest in sharing expertise, supporting practical learning, and helping emerging talent and ideas grow."],
 ] as const;
 
+const describeOptions = ["School Student","College Student","Professional","Entrepreneur","CXOs","Institutions","Industry / Organisation","Artists","Other"];
+const hackathonOptions = ["I have participated in a hackathon","I have won a hackathon","I haven’t participated in a hackathon"];
+const exploreOptions = ["Discover and develop my Kreativity","Connect with people and exchange business ideas","Create and collaborate on real time projects","Share my knowledge to young talents","Contribute to community initiatives"];
+
+function CasebookModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  if (!open) return null;
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const required: [string, string][] = [["name","Full name"],["institution","College/Institution"],["phone","Phone number"],["email","Email"],["city","City / Town"]];
+    for (const [key, label] of required) {
+      if (!String(data.get(key) ?? "").trim()) { setError(`Please enter your ${label}.`); return; }
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(data.get("email")))) { setError("Please enter a valid email address."); return; }
+    if (!String(data.get("describe") ?? "")) { setError("Please select which best describes you."); return; }
+    if (!String(data.get("hackathon") ?? "")) { setError("Please select your hackathon experience."); return; }
+    if (!data.get("consent")) { setError("Please agree to be contacted before submitting."); return; }
+    setError("");
+    setSubmitted(true);
+    window.setTimeout(() => { setSubmitted(false); form.reset(); onClose(); }, 2000);
+  };
+
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <div className="modal-card" role="dialog" aria-modal="true" aria-labelledby="casebook-form-title" onClick={(e) => e.stopPropagation()}>
+        <button type="button" className="modal-close" onClick={onClose} aria-label="Close form"><X size={20} aria-hidden="true" /></button>
+        {submitted ? (
+          <p className="modal-success" role="status">Your details have been submitted</p>
+        ) : (
+          <>
+            <h2 id="casebook-form-title">Join OPC2030 Community</h2>
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="form-row">
+                <label>Full Name<input name="name" type="text" autoComplete="name" placeholder="Enter your name" maxLength={100} /></label>
+                <label>College/Institution<input name="institution" type="text" autoComplete="organization" placeholder="Enter your college or institution" maxLength={150} /></label>
+              </div>
+              <div className="form-row">
+                <label>Ph no<input name="phone" type="tel" autoComplete="tel" placeholder="Enter your phone number" maxLength={15} /></label>
+                <label>Email<input name="email" type="email" autoComplete="email" placeholder="Enter your email address" maxLength={255} /></label>
+              </div>
+              <label>City / Town<input name="city" type="text" autoComplete="address-level2" placeholder="Enter your city or town" maxLength={100} /></label>
+              <label>Which best describes you?
+                <select name="describe" defaultValue="">
+                  <option value="" disabled>Select one.</option>
+                  {describeOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </label>
+              <fieldset>
+                <legend>What would you like to explore?</legend>
+                <p className="field-hint">Select all that interest you.</p>
+                {exploreOptions.map((o) => <label key={o} className="check-option"><input type="checkbox" name="explore" value={o} /><span>{o}</span></label>)}
+              </fieldset>
+              <label>What is your hackathon experience?
+                <select name="hackathon" defaultValue="">
+                  <option value="" disabled>Select one.</option>
+                  {hackathonOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </label>
+              <label className="check-option consent"><input type="checkbox" name="consent" /><span>I agree to be contacted about my registration and community participation. I have read the Privacy Policy.</span></label>
+              {error && <p className="form-error" role="alert">{error}</p>}
+              <button type="submit" className="action-link form-submit"><span>Submit</span><ArrowRight size={17} aria-hidden="true" /></button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function WhatsAppLink({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className={`action-link ${className}`}><FaWhatsapp aria-hidden="true" /><span>{children}</span><ArrowRight size={17} aria-hidden="true" /></a>;
 }
