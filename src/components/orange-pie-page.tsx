@@ -40,8 +40,9 @@ import sportsImage from "../assets/experience-sports-play.jpg";
 import hackathonImage from "../assets/experience-hackathons.jpg";
 import workshopImage from "../assets/experience-workshops.jpg";
 import artsImage from "../assets/experience-arts-culture.jpg";
-import headerLogo from "../assets/orangepie-community-logo.png.asset.json";
-import footerLogo from "../assets/opc2030-dark-logo.png.asset.json";
+import headerLogo from "../assets/orangepie-community-logo.png";
+// import footerLogo from "../assets/opc2030-dark-logo.png.asset.json";
+import footerLogo from "../assets/opc2030-footer-logo.png";
 import atplLogo from "../assets/ATPL_1_logo.png.asset.json";
 import savemomLogo from "../assets/Savemom_2.png.asset.json";
 import buizlabLogo from "../assets/Buizlab_Logo_1.png.asset.json";
@@ -200,7 +201,7 @@ export function OrangePiePage() {
   return <div id="top" className="site-shell">
     <header className="site-header">
       <div className="header-inner">
-        <a href="#top" className="header-logo" aria-label="Orangepie Community home"><img src={headerLogo.url} alt="Orangepie Community — Human. Powered by Kreativity" /></a>
+        <a href="#top" className="header-logo" aria-label="Orangepie Community home"><img src={headerLogo} alt="Orangepie Community — Human. Powered by Kreativity" /></a>
         <nav className="desktop-nav" aria-label="Main navigation">{navItems.map(([label,id]) => <a key={id} href={`#${id}`}>{label}</a>)}</nav>
         <WhatsAppLink className="header-cta">Join OPC 2030 Community</WhatsAppLink>
         <button className="menu-button" type="button" onClick={() => setMenuOpen(!menuOpen)} aria-expanded={menuOpen} aria-controls="mobile-menu" aria-label={menuOpen ? "Close menu" : "Open menu"}>{menuOpen ? <X /> : <Menu />}</button>
@@ -228,8 +229,83 @@ export function OrangePiePage() {
       <section id="what-you-learn" className="section learning" aria-label="What You Learn"><div className="page-width"><div className="learning-heading"><p className="eyebrow">WHAT YOU LEARN</p><p>Connecting domains through Orangepie. Build knowledge, practise your skills and discover what you can create in these domains.</p></div><div className="learning-grid">{learningDomains.map(([title,description,interests,Icon]) => <article className="learning-card" key={title}><span className="domain-icon"><Icon size={24} strokeWidth={1.7} aria-hidden="true" /></span><h3>{title}</h3>{description && <p>{description}</p>}<p className="domain-interests">{interests}</p></article>)}</div><div className="learning-close"><p>Explore AI. Connect storytelling with business. Bring design into technology.</p><WhatsAppLink>Join OPC 2030 Community</WhatsAppLink></div></div></section>
 
       <section id="what-you-experience" className="section experiences" aria-labelledby="experiences-title"><div className="page-width"><div className="section-heading experience-heading"><p className="eyebrow">WHAT YOU EXPERIENCE</p><h2 id="experiences-title">A simple conversation, a shared challenge or a game together in the community can open new possibilities in your lifestyle.</h2></div><div className="experience-grid">{experiences.map(([title,description,image,alt]) => <article key={title} className="experience-item"><div className="experience-image"><img src={image} alt={alt} width={1024} height={768} loading="lazy" /></div><div className="experience-copy"><h3>{title}</h3><p>{description}</p></div></article>)}</div></div></section>
+{/* 
+      <section id="casebook" className="section casebook" aria-labelledby="casebook-title"><div className="page-width casebook-grid"><div className="casebook-intro"><p className="eyebrow">CASEBOOK</p><h2 id="casebook-title">Even a startup idea, starts with the Kreativity</h2><p>Winning a hackathon or ideathon is a moment to remember. Casebook is a planned platform to help student winners explore what comes after that moment.</p><p>By bringing them together with invited startups, venture representatives, CEOs and industry leaders, Casebook aims to give promising ideas room to be questioned, strengthened and taken further through feedback and potential collaboration.</p><p className="casebook-close">You’ve shown what your idea can win. Now explore what it could become.</p><button type="button" className="action-link" onClick={() => setCasebookOpen(true)}><span>Explore Casebook</span><ArrowRight size={17} aria-hidden="true" /></button></div><div className="casebook-steps"><article><span>01</span><h3>Present Your Idea</h3><p>Explain the problem, your solution, and what you have created.</p></article><article><span>02</span><h3>Hear Different Perspectives</h3><p>Learn from questions and feedback that can help you strengthen your idea.</p></article><article><span>03</span><h3>Explore Your Next Step</h3><p>Build connections and explore possibilities for further development and collaboration.</p></article></div></div></section> */}
 
-      <section id="casebook" className="section casebook" aria-labelledby="casebook-title"><div className="page-width casebook-grid"><div className="casebook-intro"><p className="eyebrow">CASEBOOK</p><h2 id="casebook-title">Even a startup idea, starts with the Kreativity</h2><p>Winning a hackathon or ideathon is a moment to remember. Casebook is a planned platform to help student winners explore what comes after that moment.</p><p>By bringing them together with invited startups, venture representatives, CEOs and industry leaders, Casebook aims to give promising ideas room to be questioned, strengthened and taken further through feedback and potential collaboration.</p><p className="casebook-close">You’ve shown what your idea can win. Now explore what it could become.</p><button type="button" className="action-link" onClick={() => setCasebookOpen(true)}><span>Explore Casebook</span><ArrowRight size={17} aria-hidden="true" /></button></div><div className="casebook-steps"><article><span>01</span><h3>Present Your Idea</h3><p>Explain the problem, your solution, and what you have created.</p></article><article><span>02</span><h3>Hear Different Perspectives</h3><p>Learn from questions and feedback that can help you strengthen your idea.</p></article><article><span>03</span><h3>Explore Your Next Step</h3><p>Build connections and explore possibilities for further development and collaboration.</p></article></div></div></section>
+<section
+  id="casebook"
+  className="section casebook"
+  aria-labelledby="casebook-title"
+>
+  <div className="page-width casebook-grid">
+
+    <div className="casebook-intro">
+      <p className="eyebrow">CASEBOOK</p>
+
+      <h2 id="casebook-title">
+        Even a startup idea, starts with the Kreativity
+      </h2>
+
+      <p>
+        Winning a hackathon or ideathon is a moment to remember. Casebook is
+        a planned platform to help student winners explore what comes after
+        that moment.
+      </p>
+
+      <p>
+        By bringing them together with invited startups, venture
+        representatives, CEOs and industry leaders, Casebook aims to give
+        promising ideas room to be questioned, strengthened and taken further
+        through feedback and potential collaboration.
+      </p>
+
+      <p className="casebook-close">
+        You’ve shown what your idea can win. Now explore what it could become.
+      </p>
+
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfD0GlO_sQuVKwSFlAURUEK_34lYrCTiQ59F_eIQ365NmWqYA/viewform?usp=header"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="action-link"
+      >
+        <span>Explore Casebook</span>
+        <ArrowRight size={17} aria-hidden="true" />
+      </a>
+    </div>
+
+    <div className="casebook-steps">
+
+      <article>
+        <span>01</span>
+        <h3>Present Your Idea</h3>
+        <p>
+          Explain the problem, your solution, and what you have created.
+        </p>
+      </article>
+
+      <article>
+        <span>02</span>
+        <h3>Hear Different Perspectives</h3>
+        <p>
+          Learn from questions and feedback that can help you strengthen your idea.
+        </p>
+      </article>
+
+      <article>
+        <span>03</span>
+        <h3>Explore Your Next Step</h3>
+        <p>
+          Build connections and explore possibilities for further development
+          and collaboration.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
 
       <section id="events" className="section events" aria-labelledby="events-title"><div className="page-width events-layout"><div><p className="eyebrow">COMMUNITY EVENTS</p><h2 id="events-title">Be one among the 3 Lakh Kreators<br /><span>Join to experience the life style</span></h2></div><div className="events-copy"><p>From kreative workshops and industry talks to cultural events and outdoor activities, find something you enjoy or try something new.</p><p>Meet people, share ideas, and explore your Kreativity together.</p><WhatsAppLink>Explore Event</WhatsAppLink></div></div></section>
 
@@ -240,7 +316,7 @@ export function OrangePiePage() {
       <section id="faqs" className="section faqs" aria-labelledby="faq-title"><div className="page-width faq-grid"><div><p className="eyebrow">FREQUENTLY ASKED QUESTIONS</p><h2 id="faq-title">A few things you may want to know.</h2></div><div className="accordion">{faqs.map(([question,answer],index) => <details key={question} name="faq" open={index===0}><summary><span>{question}</span><ChevronDown size={22} aria-hidden="true" /></summary><p>{answer}</p></details>)}</div></div></section>
     </main>
 
-    <footer className="footer"><div className="footer-main"><div className="page-width footer-grid"><a href="#top" className="footer-brand" aria-label="OPC 2030 home"><img src={footerLogo.url} alt="OPC 2030 — Community for 3L Kreators" /></a><div className="footer-column"><h2 className="footer-title">Quick link</h2><nav className="footer-links" aria-label="Footer quick links one"><a href="#orangepie-labs">Orangepie Labs</a><a href="#who-can-join">Who Can Join</a><a href="#what-you-learn">What You Learn</a></nav></div><div className="footer-column footer-column-without-title"><nav className="footer-links" aria-label="Footer quick links two"><a href="#what-you-experience">What You Experience</a><a href="#casebook">Casebook</a><a href="#events">Events</a><a href="#give-back">Give Back</a></nav></div><div className="footer-contact"><h2>Contact</h2><a href="mailto:opcnetworks2030@gmail.com">opcnetworks2030@gmail.com</a><a href="tel:9444948494">9444948494</a><nav className="social-links" aria-label="Social media"><a href="https://www.facebook.com/profile.php?id=61594534073105" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a><a href="https://www.instagram.com/orangepie.ai/?hl=en" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a><a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a><a href="https://www.youtube.com/channel/UCP9rEHGptx_tYibTF8ymUwA" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a><a href="https://x.com/Orangepieai" target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter /></a><a href="https://in.pinterest.com/Orangepieai/" target="_blank" rel="noreferrer" aria-label="Pinterest"><FaPinterestP /></a><a href="https://www.linkedin.com/company/143884050/admin/dashboard/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a></nav></div></div></div><div className="footer-legal"><div className="page-width"><p>Copyrights reserved by orangepie community @2026</p></div></div></footer>
+    <footer className="footer"><div className="footer-main"><div className="page-width footer-grid"><a href="#top" className="footer-brand" aria-label="OPC 2030 home"><img src={footerLogo} alt="OPC 2030 — Community for 3L Kreators" /></a><div className="footer-column"><h2 className="footer-title">Quick link</h2><nav className="footer-links" aria-label="Footer quick links one"><a href="#orangepie-labs">Orangepie Labs</a><a href="#who-can-join">Who Can Join</a><a href="#what-you-learn">What You Learn</a></nav></div><div className="footer-column footer-column-without-title"><nav className="footer-links" aria-label="Footer quick links two"><a href="#what-you-experience">What You Experience</a><a href="#casebook">Casebook</a><a href="#events">Events</a><a href="#give-back">Give Back</a></nav></div><div className="footer-contact"><h2>Contact</h2><a href="mailto:opcnetworks2030@gmail.com">opcnetworks2030@gmail.com</a><a href="tel:9444948494">9444948494</a><nav className="social-links" aria-label="Social media"><a href="https://www.facebook.com/profile.php?id=61594534073105" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF /></a><a href="https://www.instagram.com/orangepie.ai?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram /></a><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a><a href="https://www.youtube.com/@Orangepie-ai" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube /></a><a href="https://x.com/Orangepieai" target="_blank" rel="noopener noreferrer" aria-label="X"><FaXTwitter /></a><a href="https://pin.it/1UdgZbujl" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><FaPinterestP /></a><a href="https://www.linkedin.com/company/orangepie-ai/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a></nav></div></div></div><div className="footer-legal"><div className="page-width"><p>Copyrights reserved by orangepie community @2026</p></div></div></footer>
     <CasebookModal open={casebookOpen} onClose={() => setCasebookOpen(false)} />
   </div>;
 }
