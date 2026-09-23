@@ -15,3 +15,4 @@
 - [x] Create the revised seven-domain learning and six-experience layouts with updated imagery.
 - [x] Verify copy, WhatsApp actions, anchors, accessibility, and responsive layouts.
 - [x] Apply the latest PDF corrections: hero mark removal, section alignment, collaborator logos, and footer layout.
+- [x] Add Join OPC2030 Community registration modal on the Explore Casebook button (no WhatsApp icon, validation, success message, auto-close).
