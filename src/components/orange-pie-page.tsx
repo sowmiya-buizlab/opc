@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
 import {
   ArrowRight,
   BrainCircuit,
@@ -115,12 +115,87 @@ const faqs = [
   ["Can companies and institutions collaborate?", "Yes. They can express interest in sharing expertise, supporting practical learning, and helping emerging talent and ideas grow."],
 ] as const;
 
+const describeOptions = ["School Student","College Student","Professional","Entrepreneur","CXOs","Institutions","Industry / Organisation","Artists","Other"];
+const hackathonOptions = ["I have participated in a hackathon","I have won a hackathon","I haven’t participated in a hackathon"];
+const exploreOptions = ["Discover and develop my Kreativity","Connect with people and exchange business ideas","Create and collaborate on real time projects","Share my knowledge to young talents","Contribute to community initiatives"];
+
+function CasebookModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  if (!open) return null;
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const required: [string, string][] = [["name","Full name"],["institution","College/Institution"],["phone","Phone number"],["email","Email"],["city","City / Town"]];
+    for (const [key, label] of required) {
+      if (!String(data.get(key) ?? "").trim()) { setError(`Please enter your ${label}.`); return; }
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(String(data.get("email")))) { setError("Please enter a valid email address."); return; }
+    if (!String(data.get("describe") ?? "")) { setError("Please select which best describes you."); return; }
+    if (!String(data.get("hackathon") ?? "")) { setError("Please select your hackathon experience."); return; }
+    if (!data.get("consent")) { setError("Please agree to be contacted before submitting."); return; }
+    setError("");
+    setSubmitted(true);
+    window.setTimeout(() => { setSubmitted(false); form.reset(); onClose(); }, 2000);
+  };
+
+  return (
+    <div className="modal-backdrop" role="presentation" onClick={onClose}>
+      <div className="modal-card" role="dialog" aria-modal="true" aria-labelledby="casebook-form-title" onClick={(e) => e.stopPropagation()}>
+        <button type="button" className="modal-close" onClick={onClose} aria-label="Close form"><X size={20} aria-hidden="true" /></button>
+        {submitted ? (
+          <p className="modal-success" role="status">Your details have been submitted</p>
+        ) : (
+          <>
+            <h2 id="casebook-form-title">Join OPC2030 Community</h2>
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="form-row">
+                <label>Full Name<input name="name" type="text" autoComplete="name" placeholder="Enter your name" maxLength={100} /></label>
+                <label>College/Institution<input name="institution" type="text" autoComplete="organization" placeholder="Enter your college or institution" maxLength={150} /></label>
+              </div>
+              <div className="form-row">
+                <label>Ph no<input name="phone" type="tel" autoComplete="tel" placeholder="Enter your phone number" maxLength={15} /></label>
+                <label>Email<input name="email" type="email" autoComplete="email" placeholder="Enter your email address" maxLength={255} /></label>
+              </div>
+              <label>City / Town<input name="city" type="text" autoComplete="address-level2" placeholder="Enter your city or town" maxLength={100} /></label>
+              <label>Which best describes you?
+                <select name="describe" defaultValue="">
+                  <option value="" disabled>Select one.</option>
+                  {describeOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </label>
+              <fieldset>
+                <legend>What would you like to explore?</legend>
+                <p className="field-hint">Select all that interest you.</p>
+                {exploreOptions.map((o) => <label key={o} className="check-option"><input type="checkbox" name="explore" value={o} /><span>{o}</span></label>)}
+              </fieldset>
+              <label>What is your hackathon experience?
+                <select name="hackathon" defaultValue="">
+                  <option value="" disabled>Select one.</option>
+                  {hackathonOptions.map((o) => <option key={o} value={o}>{o}</option>)}
+                </select>
+              </label>
+              <label className="check-option consent"><input type="checkbox" name="consent" /><span>I agree to be contacted about my registration and community participation. I have read the Privacy Policy.</span></label>
+              {error && <p className="form-error" role="alert">{error}</p>}
+              <button type="submit" className="action-link form-submit"><span>Submit</span><ArrowRight size={17} aria-hidden="true" /></button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function WhatsAppLink({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className={`action-link ${className}`}><FaWhatsapp aria-hidden="true" /><span>{children}</span><ArrowRight size={17} aria-hidden="true" /></a>;
 }
 
 export function OrangePiePage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [casebookOpen, setCasebookOpen] = useState(false);
 
   return <div id="top" className="site-shell">
     <header className="site-header">
@@ -154,7 +229,7 @@ export function OrangePiePage() {
 
       <section id="what-you-experience" className="section experiences" aria-labelledby="experiences-title"><div className="page-width"><div className="section-heading experience-heading"><p className="eyebrow">WHAT YOU EXPERIENCE</p><h2 id="experiences-title">A simple conversation, a shared challenge or a game together in the community can open new possibilities in your lifestyle.</h2></div><div className="experience-grid">{experiences.map(([title,description,image,alt]) => <article key={title} className="experience-item"><div className="experience-image"><img src={image} alt={alt} width={1024} height={768} loading="lazy" /></div><div className="experience-copy"><h3>{title}</h3><p>{description}</p></div></article>)}</div></div></section>
 
-      <section id="casebook" className="section casebook" aria-labelledby="casebook-title"><div className="page-width casebook-grid"><div className="casebook-intro"><p className="eyebrow">CASEBOOK</p><h2 id="casebook-title">Even a startup idea, starts with the Kreativity</h2><p>Winning a hackathon or ideathon is a moment to remember. Casebook is a planned platform to help student winners explore what comes after that moment.</p><p>By bringing them together with invited startups, venture representatives, CEOs and industry leaders, Casebook aims to give promising ideas room to be questioned, strengthened and taken further through feedback and potential collaboration.</p><p className="casebook-close">You’ve shown what your idea can win. Now explore what it could become.</p><WhatsAppLink>Explore Casebook</WhatsAppLink></div><div className="casebook-steps"><article><span>01</span><h3>Present Your Idea</h3><p>Explain the problem, your solution, and what you have created.</p></article><article><span>02</span><h3>Hear Different Perspectives</h3><p>Learn from questions and feedback that can help you strengthen your idea.</p></article><article><span>03</span><h3>Explore Your Next Step</h3><p>Build connections and explore possibilities for further development and collaboration.</p></article></div></div></section>
+      <section id="casebook" className="section casebook" aria-labelledby="casebook-title"><div className="page-width casebook-grid"><div className="casebook-intro"><p className="eyebrow">CASEBOOK</p><h2 id="casebook-title">Even a startup idea, starts with the Kreativity</h2><p>Winning a hackathon or ideathon is a moment to remember. Casebook is a planned platform to help student winners explore what comes after that moment.</p><p>By bringing them together with invited startups, venture representatives, CEOs and industry leaders, Casebook aims to give promising ideas room to be questioned, strengthened and taken further through feedback and potential collaboration.</p><p className="casebook-close">You’ve shown what your idea can win. Now explore what it could become.</p><button type="button" className="action-link" onClick={() => setCasebookOpen(true)}><span>Explore Casebook</span><ArrowRight size={17} aria-hidden="true" /></button></div><div className="casebook-steps"><article><span>01</span><h3>Present Your Idea</h3><p>Explain the problem, your solution, and what you have created.</p></article><article><span>02</span><h3>Hear Different Perspectives</h3><p>Learn from questions and feedback that can help you strengthen your idea.</p></article><article><span>03</span><h3>Explore Your Next Step</h3><p>Build connections and explore possibilities for further development and collaboration.</p></article></div></div></section>
 
       <section id="events" className="section events" aria-labelledby="events-title"><div className="page-width events-layout"><div><p className="eyebrow">COMMUNITY EVENTS</p><h2 id="events-title">Be one among the 3 Lakh Kreators<br /><span>Join to experience the life style</span></h2></div><div className="events-copy"><p>From kreative workshops and industry talks to cultural events and outdoor activities, find something you enjoy or try something new.</p><p>Meet people, share ideas, and explore your Kreativity together.</p><WhatsAppLink>Explore Event</WhatsAppLink></div></div></section>
 
@@ -166,5 +241,6 @@ export function OrangePiePage() {
     </main>
 
     <footer className="footer"><div className="footer-main"><div className="page-width footer-grid"><a href="#top" className="footer-brand" aria-label="OPC 2030 home"><img src={footerLogo.url} alt="OPC 2030 — Community for 3L Kreators" /></a><div className="footer-column"><h2 className="footer-title">Quick link</h2><nav className="footer-links" aria-label="Footer quick links one"><a href="#orangepie-labs">Orangepie Labs</a><a href="#who-can-join">Who Can Join</a><a href="#what-you-learn">What You Learn</a></nav></div><div className="footer-column footer-column-without-title"><nav className="footer-links" aria-label="Footer quick links two"><a href="#what-you-experience">What You Experience</a><a href="#casebook">Casebook</a><a href="#events">Events</a><a href="#give-back">Give Back</a></nav></div><div className="footer-contact"><h2>Contact</h2><a href="mailto:opcnetworks2030@gmail.com">opcnetworks2030@gmail.com</a><a href="tel:9444948494">9444948494</a><nav className="social-links" aria-label="Social media"><a href="https://www.facebook.com/profile.php?id=61594534073105" target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebookF /></a><a href="https://www.instagram.com/orangepie.ai/?hl=en" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram /></a><a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp /></a><a href="https://www.youtube.com/channel/UCP9rEHGptx_tYibTF8ymUwA" target="_blank" rel="noreferrer" aria-label="YouTube"><FaYoutube /></a><a href="https://x.com/Orangepieai" target="_blank" rel="noreferrer" aria-label="X"><FaXTwitter /></a><a href="https://in.pinterest.com/Orangepieai/" target="_blank" rel="noreferrer" aria-label="Pinterest"><FaPinterestP /></a><a href="https://www.linkedin.com/company/143884050/admin/dashboard/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn /></a></nav></div></div></div><div className="footer-legal"><div className="page-width"><p>Copyrights reserved by orangepie community @2026</p></div></div></footer>
+    <CasebookModal open={casebookOpen} onClose={() => setCasebookOpen(false)} />
   </div>;
 }
