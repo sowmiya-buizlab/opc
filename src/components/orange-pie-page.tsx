@@ -41,20 +41,19 @@ import hackathonImage from "../assets/experience-hackathons.jpg";
 import workshopImage from "../assets/experience-workshops.jpg";
 import artsImage from "../assets/experience-arts-culture.jpg";
 import headerLogo from "../assets/orangepie-community-logo.png";
-// import footerLogo from "../assets/opc2030-dark-logo.png.asset.json";
 import footerLogo from "../assets/opc2030-footer-logo.png";
-import atplLogo from "../assets/ATPL_1_logo.png.asset.json";
-import savemomLogo from "../assets/Savemom_2.png.asset.json";
-import buizlabLogo from "../assets/Buizlab_Logo_1.png.asset.json";
-import digitallLogo from "../assets/Digitall_white_BG.png.asset.json";
-import gdgLogo from "../assets/GDG_white_BG.png.asset.json";
+import atplLogo from "../assets/ATPL_1_logo.png";
+import savemomLogo from "../assets/Savemom_2.png";
+import buizlabLogo from "../assets/Buizlab_Logo_1.png";
+import digitallLogo from "../assets/Digitall_white_BG.png";
+import gdgLogo from "../assets/GDG_white_BG.png";
 
 const collaboratorLogos = [
-  { url: buizlabLogo.url, alt: "Buiz Lab" },
-  { url: savemomLogo.url, alt: "Savemom" },
-  { url: atplLogo.url, alt: "Auroversity Technologies" },
-  { url: digitallLogo.url, alt: "Digitall Digital Transformation Forum" },
-  { url: gdgLogo.url, alt: "Google Developer Groups Madurai" },
+  { url: buizlabLogo, alt: "Buiz Lab" },
+  { url: savemomLogo, alt: "Savemom" },
+  { url: atplLogo, alt: "Auroversity Technologies" },
+  { url: digitallLogo, alt: "Digitall Digital Transformation Forum" },
+  { url: gdgLogo, alt: "Google Developer Groups Madurai" },
 ];
 
 const WHATSAPP_URL = "https://chat.whatsapp.com/LX2JpMqRa13IyIdP024twV";
