@@ -102,15 +102,25 @@ let whatsappCloseWatcher: number | null = null;
    NAVIGATION
    ========================================================= */
 
+// const navItems = [
+//   ["Orangepie Labs", "#orangepie-labs"],
+//   ["Who Can Join", "#who-can-join"],
+//   ["What You Learn", "#what-you-learn"],
+//   ["What You Experience", "#what-you-experience"],
+//   ["Casebook", "#casebook"],
+//   ["Life With Yoga", "https://fidelity-canvas-dev.lovable.app"],
+//   ["Events", "#events"],
+//   ["Give Back", "#give-back"],
+// ] as const;
 const navItems = [
-  ["Orangepie Labs", "orangepie-labs"],
-  ["Who Can Join", "who-can-join"],
-  ["What You Learn", "what-you-learn"],
-  ["What You Experience", "what-you-experience"],
-  ["Casebook", "casebook"],
-  ["Life With Yoga", "life-with-yoga"],
-  ["Events", "events"],
-  ["Give Back", "give-back"],
+  ["Orangepie Labs", "#orangepie-labs"],
+  ["Who Can Join", "#who-can-join"],
+  ["What You Learn", "#what-you-learn"],
+  ["What You Experience", "#what-you-experience"],
+  ["Casebook", "#casebook"],
+  ["Life With Yoga", "/yoga"],
+  ["Events", "#events"],
+  ["Give Back", "#give-back"],
 ] as const;
 
 /* =========================================================
@@ -545,10 +555,10 @@ export function OrangePiePage() {
             className="desktop-nav"
             aria-label="Main navigation"
           >
-            {navItems.map(([label, id]) => (
+            {navItems.map(([label, href]) => (
               <a
-                key={id}
-                href={`#${id}`}
+                key={label}
+                href={href}
               >
                 {label}
               </a>
@@ -584,10 +594,10 @@ export function OrangePiePage() {
             className="mobile-nav"
             aria-label="Mobile navigation"
           >
-            {navItems.map(([label, id]) => (
+            {navItems.map(([label, href]) => (
               <a
-                key={id}
-                href={`#${id}`}
+                key={label}
+                href={href}
                 onClick={() =>
                   setMenuOpen(false)
                 }
@@ -1477,7 +1487,7 @@ export function OrangePiePage() {
                   Casebook
                 </a>
 
-                <a href="#life-with-yoga">
+                <a href="/yoga">
                   Life With Yoga
                 </a>
 
