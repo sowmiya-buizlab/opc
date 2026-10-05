@@ -38,6 +38,8 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 
+import { Link } from "@tanstack/react-router";
+
 import heroBackgroundImage from "../assets/hero-background.png";
 import orangeEconomyImage from "../assets/orange-economy.jpg";
 import ceoImage from "../assets/experience-ceo-connect.jpg";
@@ -50,6 +52,7 @@ import headerLogo from "../assets/orangepie-community-logo.png";
 import footerLogo from "../assets/opc2030-footer-logo.png";
 import atplLogo from "../assets/ATPL_1_logo.png";
 import savemomLogo from "../assets/Savemom_2.png";
+import sranaLogo from "../assets/Srana_2.png";
 import buizlabLogo from "../assets/Buizlab_Logo_1.png";
 import digitallLogo from "../assets/Digitall_white_BG.png";
 import gdgLogo from "../assets/GDG_white_BG.png";
@@ -59,9 +62,18 @@ import gdgLogo from "../assets/GDG_white_BG.png";
    ========================================================= */
 
 const collaboratorLogos = [
-  { url: buizlabLogo, alt: "Buiz Lab" },
-  { url: savemomLogo, alt: "Savemom" },
-  { url: atplLogo, alt: "Auroversity Technologies" },
+  {
+    url: buizlabLogo,
+    alt: "Buiz Lab",
+  },
+  {
+    url: savemomLogo,
+    alt: "Savemom",
+  },
+  {
+    url: atplLogo,
+    alt: "Auroversity Technologies",
+  },
   {
     url: digitallLogo,
     alt: "Digitall Digital Transformation Forum",
@@ -69,6 +81,10 @@ const collaboratorLogos = [
   {
     url: gdgLogo,
     alt: "Google Developer Groups Madurai",
+  },
+  {
+    url: sranaLogo,
+    alt: "Sranayoga",
   },
 ];
 
@@ -79,13 +95,6 @@ const collaboratorLogos = [
 const WHATSAPP_URL =
   "https://chat.whatsapp.com/IX2JpMqRa13IyIdP024twV";
 
-/*
-  Stores the currently opened WhatsApp browser window.
-
-  This lets us detect when the NEW WhatsApp tab/window
-  is closed and then return the existing OPC website
-  to the Hero section.
-*/
 let whatsappWindow: Window | null = null;
 let whatsappCloseWatcher: number | null = null;
 
@@ -99,6 +108,7 @@ const navItems = [
   ["What You Learn", "what-you-learn"],
   ["What You Experience", "what-you-experience"],
   ["Casebook", "casebook"],
+  ["Life With Yoga", "life-with-yoga"],
   ["Events", "events"],
   ["Give Back", "give-back"],
 ] as const;
@@ -306,13 +316,6 @@ const faqs = [
 ] as const;
 
 /* =========================================================
-   FORM OPTIONS
-   ========================================================= */
-
-
-
-
-/* =========================================================
    GOOGLE FORM MODALS
    ========================================================= */
 
@@ -321,6 +324,10 @@ const CASEBOOK_FORM_URL =
 
 const EVENT_FORM_URL =
   "https://forms.gle/K3rRN6Y11FAyFnwZ6";
+
+/* =========================================================
+   MODAL COMPONENT
+   ========================================================= */
 
 function GoogleFormModal({
   open,
@@ -431,20 +438,12 @@ function stopWhatsAppWatcher() {
 function watchWhatsAppWindow() {
   stopWhatsAppWatcher();
 
-  /*
-    Check every 500ms whether the WhatsApp tab/window
-    opened by this website has been closed.
-  */
   whatsappCloseWatcher = window.setInterval(() => {
     if (!whatsappWindow || whatsappWindow.closed) {
       stopWhatsAppWatcher();
 
       whatsappWindow = null;
 
-      /*
-        WhatsApp tab is closed.
-        Return the EXISTING OPC website tab to Hero.
-      */
       returnToHero();
     }
   }, 500);
@@ -459,34 +458,19 @@ function handleWhatsAppClick(
 ) {
   e.preventDefault();
 
-  /*
-    Stop an older watcher if another WhatsApp tab
-    was previously opened.
-  */
   stopWhatsAppWatcher();
 
-  /*
-    Open WhatsApp in a NEW browser tab/window.
-  */
   whatsappWindow = window.open(
     WHATSAPP_URL,
     "_blank",
     "noopener,noreferrer"
   );
 
-  /*
-    If browser blocks window.open, fallback to normal
-    anchor navigation.
-  */
   if (!whatsappWindow) {
     window.open(WHATSAPP_URL, "_blank");
     return;
   }
 
-  /*
-    Start checking whether the newly opened WhatsApp
-    tab/window has been closed.
-  */
   watchWhatsAppWindow();
 }
 
@@ -529,10 +513,6 @@ export function OrangePiePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [casebookOpen, setCasebookOpen] = useState(false);
   const [eventOpen, setEventOpen] = useState(false);
-
-  /* =======================================================
-     CLEANUP WHATSAPP WATCHER
-     ======================================================= */
 
   useEffect(() => {
     return () => {
@@ -1122,6 +1102,68 @@ export function OrangePiePage() {
           </div>
         </section>
 
+        {/* YOGA / CREATIVE LIFESTYLE */}
+
+        <section
+          id="life-with-yoga"
+          className="section yoga-section"
+          aria-labelledby="yoga-title"
+        >
+          <div className="page-width yoga-grid">
+
+            <div className="yoga-copy">
+
+              <p className="eyebrow">
+                LIFE WITH YOGA
+              </p>
+
+              <h2 id="yoga-title">
+                Find balance
+                <br />
+                in every breath.
+              </h2>
+
+              <h3 className="yoga-highlight">
+                Breathe deeper. Live lighter.
+              </h3>
+
+              <p className="yoga-description">
+                Learn yoga through the power of
+                breath—with Sampathyogi from
+                Sranayoga. Bring calm to your body,
+                clarity to your mind and purpose to
+                your everyday life.
+              </p>
+
+              <Link
+                to="/yoga"
+                className="action-link yoga-button"
+              >
+                <span>
+                  Explore Yoga for Kreativity
+                </span>
+
+                <ArrowRight
+                  size={17}
+                  aria-hidden="true"
+                />
+              </Link>
+
+            </div>
+
+            <figure className="yoga-image">
+              <img
+                src="/assets/yoga-section-image.png"
+                alt="People practising yoga together"
+                width={1600}
+                height={900}
+                loading="lazy"
+              />
+            </figure>
+
+          </div>
+        </section>
+
         {/* EVENTS */}
 
         <section
@@ -1168,7 +1210,11 @@ export function OrangePiePage() {
                 onClick={() => setEventOpen(true)}
               >
                 <span>Explore Event</span>
-                <ArrowRight size={17} aria-hidden="true" />
+
+                <ArrowRight
+                  size={17}
+                  aria-hidden="true"
+                />
               </button>
 
             </div>
@@ -1299,6 +1345,7 @@ export function OrangePiePage() {
                       <p>{description}</p>
 
                     </div>
+
                   </article>
                 )
               )}
@@ -1349,6 +1396,7 @@ export function OrangePiePage() {
                     </summary>
 
                     <p>{answer}</p>
+
                   </details>
                 )
               )}
@@ -1380,6 +1428,11 @@ export function OrangePiePage() {
               />
             </a>
 
+            {/* ============================================
+                QUICK LINKS - COLUMN 1
+                4 LINKS
+                ============================================ */}
+
             <div className="footer-column">
 
               <h2 className="footer-title">
@@ -1401,9 +1454,18 @@ export function OrangePiePage() {
                 <a href="#what-you-learn">
                   What You Learn
                 </a>
+
+                <a href="#what-you-experience">
+                  What You Experience
+                </a>
               </nav>
 
             </div>
+
+            {/* ============================================
+                QUICK LINKS - COLUMN 2
+                4 LINKS
+                ============================================ */}
 
             <div className="footer-column footer-column-without-title">
 
@@ -1411,12 +1473,12 @@ export function OrangePiePage() {
                 className="footer-links"
                 aria-label="Footer quick links two"
               >
-                <a href="#what-you-experience">
-                  What You Experience
-                </a>
-
                 <a href="#casebook">
                   Casebook
+                </a>
+
+                <a href="#life-with-yoga">
+                  Life With Yoga
                 </a>
 
                 <a href="#events">
@@ -1426,9 +1488,14 @@ export function OrangePiePage() {
                 <a href="#give-back">
                   Give Back
                 </a>
+
               </nav>
 
             </div>
+
+            {/* ============================================
+                CONTACT
+                ============================================ */}
 
             <div className="footer-contact">
 
@@ -1513,6 +1580,7 @@ export function OrangePiePage() {
 
               </nav>
             </div>
+
           </div>
         </div>
 
@@ -1531,7 +1599,9 @@ export function OrangePiePage() {
 
       </footer>
 
-      {/* GOOGLE FORM MODALS */}
+      {/* ===================================================
+          CASEBOOK GOOGLE FORM POPUP
+          =================================================== */}
 
       <GoogleFormModal
         open={casebookOpen}
@@ -1539,6 +1609,10 @@ export function OrangePiePage() {
         title="Join OPC 2030 Community"
         formUrl={CASEBOOK_FORM_URL}
       />
+
+      {/* ===================================================
+          EVENT GOOGLE FORM POPUP
+          =================================================== */}
 
       <GoogleFormModal
         open={eventOpen}

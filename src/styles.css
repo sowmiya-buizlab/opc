@@ -30,7 +30,6 @@
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.18 0.012 50);
-
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.012 50);
 
@@ -183,12 +182,9 @@ h2 span {
   position: sticky;
   top: 0;
   z-index: 50;
-
   border-bottom: 1px solid
     color-mix(in oklab, var(--border) 80%, transparent);
-
   background: color-mix(in oklab, var(--background) 94%, transparent);
-
   backdrop-filter: blur(14px);
 }
 
@@ -196,10 +192,8 @@ h2 span {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-
   width: min(1380px, calc(100% - 28px));
   min-height: 78px;
-
   margin-inline: auto;
 }
 
@@ -227,20 +221,16 @@ h2 span {
   width: 44px;
   height: 44px;
   place-items: center;
-
   border: 0;
   background: transparent;
   color: var(--foreground);
-
   cursor: pointer;
 }
 
 .mobile-nav {
   display: grid;
   gap: 2px;
-
   padding: 8px 20px 20px;
-
   border-top: 1px solid var(--border);
   background: var(--background);
 }
@@ -261,21 +251,15 @@ h2 span {
   display: inline-flex;
   width: fit-content;
   min-height: 52px;
-
   align-items: center;
   justify-content: center;
   gap: 10px;
-
   margin-top: 29px;
   padding: 0 20px;
-
   border-radius: var(--radius);
-
   background: var(--primary);
   color: var(--primary-foreground);
-
   font-weight: 800;
-
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -283,7 +267,6 @@ h2 span {
 
 .action-link:hover {
   transform: translateY(-2px);
-
   box-shadow:
     0 12px 28px
     color-mix(in oklab, var(--primary) 26%, transparent);
@@ -305,17 +288,11 @@ h2 span {
 
 .hero {
   position: relative;
-
   display: flex;
-
   min-height: 78svh;
-
   align-items: center;
-
   padding-block: 86px 56px;
-
   overflow: hidden;
-
   isolation: isolate;
 }
 
@@ -323,20 +300,29 @@ h2 span {
   position: absolute;
   inset: 0;
   z-index: -2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .hero-bg img {
+  display: block;
   width: 100%;
   height: 100%;
-
+  min-width: 100%;
+  min-height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
+  pointer-events: none;
+  user-select: none;
 }
 
 .hero-veil {
   position: absolute;
   inset: 0;
   z-index: -1;
+  pointer-events: none;
 
   background:
     linear-gradient(
@@ -350,11 +336,8 @@ h2 span {
 
 .hero-layout {
   position: relative;
-
   display: flex;
-
   min-height: calc(78svh - 142px);
-
   align-items: center;
 }
 
@@ -380,9 +363,7 @@ h2 span {
 
 .hero-kicker {
   max-width: 680px;
-
   margin-top: 24px;
-
   font-size: 1.16rem;
   line-height: 1.55;
 }
@@ -393,11 +374,8 @@ h2 span {
 
 .hero-intro {
   max-width: 650px;
-
   margin-top: 17px;
-
   color: var(--ink-soft);
-
   font-size: 1.03rem;
   line-height: 1.68;
 }
@@ -431,15 +409,11 @@ h2 span {
 
 .editorial-copy {
   display: grid;
-
   max-width: 650px;
-
   gap: 17px;
   margin-top: 27px;
-
   color:
     color-mix(in oklab, var(--background) 76%, transparent);
-
   font-size: 0.98rem;
   line-height: 1.68;
 }
@@ -447,9 +421,7 @@ h2 span {
 .editorial-copy .emphasis {
   margin-top: 4px;
   padding-left: 18px;
-
   border-left: 3px solid var(--primary);
-
   color: var(--background);
   font-weight: 700;
 }
@@ -460,22 +432,17 @@ h2 span {
 
 .labs {
   position: relative;
-
   background: var(--background);
-
   overflow: hidden;
 }
 
 .labs::after {
   content: "2030";
-
   position: absolute;
   right: -12px;
   bottom: -45px;
-
   color:
     color-mix(in oklab, var(--primary) 7%, transparent);
-
   font-family: var(--font-display);
   font-size: clamp(8rem, 23vw, 20rem);
   font-weight: 800;
@@ -485,19 +452,14 @@ h2 span {
 .labs-grid {
   position: relative;
   z-index: 1;
-
   display: grid;
-
   gap: 40px;
 }
 
 .labs-copy {
   display: grid;
-
   gap: 18px;
-
   color: var(--ink-soft);
-
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -517,18 +479,12 @@ h2 span {
 
 .audience-item {
   position: relative;
-
   min-height: 225px;
-
   padding: 25px;
-
   overflow: hidden;
-
   border: 1px solid var(--border);
   border-radius: 6px;
-
   background: var(--background);
-
   box-shadow:
     0 16px 42px
     color-mix(in oklab, var(--foreground) 5%, transparent);
@@ -541,13 +497,10 @@ h2 span {
 
 .card-number {
   position: absolute;
-
   top: 21px;
   right: 21px;
-
   color:
     color-mix(in oklab, var(--foreground) 24%, transparent);
-
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 700;
@@ -560,22 +513,17 @@ h2 span {
 
 .audience-item p {
   margin-top: 11px;
-
   color: var(--ink-soft);
-
   font-size: 0.89rem;
   line-height: 1.62;
 }
 
 .audience-conclusion {
   max-width: 760px;
-
   margin: 40px auto 0;
-
   font-size: 1.1rem;
   font-weight: 650;
   line-height: 1.6;
-
   text-align: center;
 }
 
@@ -590,11 +538,8 @@ h2 span {
 
 .learning-heading > p:last-child {
   max-width: 690px;
-
   margin-top: 0;
-
   color: var(--ink-soft);
-
   line-height: 1.7;
 }
 
@@ -605,32 +550,22 @@ h2 span {
 
 .learning-card {
   position: relative;
-
   min-width: 0;
-
   padding: 26px;
-
   overflow: hidden;
-
   border: 1px solid var(--border);
   border-radius: 6px;
-
   background: var(--surface);
 }
 
 .learning-card::after {
   content: "";
-
   position: absolute;
-
   right: 0;
   bottom: 0;
-
   width: 56px;
   height: 4px;
-
   background: var(--primary);
-
   transition: width 0.3s ease;
 }
 
@@ -640,16 +575,11 @@ h2 span {
 
 .domain-icon {
   display: grid;
-
   width: 45px;
   height: 45px;
-
   margin-bottom: 24px;
-
   place-items: center;
-
   border-radius: 5px;
-
   background: var(--primary);
   color: var(--primary-foreground);
 }
@@ -661,20 +591,15 @@ h2 span {
 
 .learning-card > p {
   margin-top: 10px;
-
   color: var(--ink-soft);
-
   font-size: 0.88rem;
   line-height: 1.62;
 }
 
 .learning-card .domain-interests {
   padding-top: 14px;
-
   border-top: 1px solid var(--border);
-
   color: var(--foreground);
-
   font-size: 0.77rem;
   font-weight: 700;
   line-height: 1.72;
@@ -682,21 +607,16 @@ h2 span {
 
 .learning-close {
   display: flex;
-
   flex-direction: column;
   align-items: start;
-
   gap: 8px 28px;
-
   margin-top: 48px;
   padding-left: 22px;
-
   border-left: 4px solid var(--primary);
 }
 
 .learning-close p {
   color: var(--ink-soft);
-
   font-size: 1.03rem;
   font-weight: 650;
   line-height: 1.65;
@@ -717,12 +637,9 @@ h2 span {
 
 .experience-item {
   overflow: hidden;
-
   border: 1px solid var(--border);
   border-radius: 6px;
-
   background: var(--background);
-
   box-shadow:
     0 15px 38px
     color-mix(in oklab, var(--foreground) 5%, transparent);
@@ -734,11 +651,8 @@ h2 span {
 
 .experience-image img {
   width: 100%;
-
   aspect-ratio: 4 / 3;
-
   object-fit: cover;
-
   transition: transform 0.45s ease;
 }
 
@@ -748,9 +662,7 @@ h2 span {
 
 .experience-copy {
   display: grid;
-
   gap: 8px;
-
   padding: 20px;
 }
 
@@ -760,7 +672,6 @@ h2 span {
 
 .experience-copy p {
   color: var(--ink-soft);
-
   font-size: 0.86rem;
   line-height: 1.62;
 }
@@ -780,17 +691,13 @@ h2 span {
 
 .casebook-intro > p:not(.eyebrow) {
   max-width: 650px;
-
   margin-top: 18px;
-
   color: var(--ink-soft);
-
   line-height: 1.68;
 }
 
 .casebook-close {
   color: var(--foreground) !important;
-
   font-size: 1.13rem !important;
   font-weight: 700;
 }
@@ -801,21 +708,15 @@ h2 span {
 
 .casebook-steps article {
   display: grid;
-
   grid-template-columns: 38px minmax(0, 1fr);
-
   gap: 8px 14px;
-
   padding-block: 23px;
-
   border-bottom: 1px solid var(--border);
 }
 
 .casebook-steps article > span {
   grid-row: 1 / 3;
-
   color: var(--primary);
-
   font-family: var(--font-display);
   font-size: 0.75rem;
   font-weight: 700;
@@ -827,7 +728,6 @@ h2 span {
 
 .casebook-steps p {
   color: var(--ink-soft);
-
   font-size: 0.92rem;
   line-height: 1.62;
 }
@@ -838,53 +738,38 @@ h2 span {
 
 .events {
   position: relative;
-
   overflow: hidden;
-
   background: var(--charcoal);
   color: var(--background);
 }
 
 .events::after {
   content: "";
-
   position: absolute;
-
   top: 50%;
   right: -80px;
-
   width: 280px;
   height: 280px;
-
   border: 48px solid
     color-mix(in oklab, var(--background) 14%, transparent);
-
   border-radius: 50%;
-
   transform: translateY(-50%);
 }
 
 .events-layout {
   position: relative;
   z-index: 1;
-
   display: grid;
-
   gap: 34px;
-
   align-items: end;
 }
 
 .events-copy {
   display: grid;
-
   max-width: 590px;
-
   gap: 17px;
-
   color:
     color-mix(in oklab, var(--background) 82%, transparent);
-
   font-size: 1.03rem;
   line-height: 1.72;
 }
@@ -895,7 +780,6 @@ h2 span {
 
 .collaborators {
   border-block: 1px solid var(--border);
-
   background: var(--surface);
 }
 
@@ -927,11 +811,8 @@ h2 span {
 
 .logo-track {
   display: flex;
-
   gap: 12px;
-
   width: max-content;
-
   animation: logo-marquee 28s linear infinite;
 }
 
@@ -945,28 +826,20 @@ h2 span {
 
 .logo-track figure {
   display: grid;
-
   flex: 0 0 min(270px, 78vw);
-
   min-height: 145px;
-
   margin: 0;
   padding: 22px;
-
   place-items: center;
-
   border: 1px solid var(--border);
   border-radius: 6px;
-
   background: var(--background);
 }
 
 .logo-track img {
   width: 100%;
-
   max-width: 220px;
   max-height: 86px;
-
   object-fit: contain;
 }
 
@@ -1002,9 +875,7 @@ h2 span {
 
 .give-layout {
   display: grid;
-
   gap: 46px;
-
   align-items: start;
 }
 
@@ -1014,12 +885,9 @@ h2 span {
 
 .give-heading > p:last-of-type {
   max-width: 460px;
-
   margin-top: 21px;
-
   color:
     color-mix(in oklab, var(--background) 74%, transparent);
-
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -1032,15 +900,10 @@ h2 span {
 
 .giving-list article {
   display: grid;
-
   grid-template-columns: 30px 42px minmax(0, 1fr);
-
   align-items: start;
-
   gap: 14px;
-
   padding-block: 21px;
-
   border-bottom:
     1px solid
     color-mix(in oklab, var(--background) 15%, transparent);
@@ -1053,7 +916,6 @@ h2 span {
 
 .giving-number {
   padding-top: 4px;
-
   font-family: var(--font-display);
   font-size: 0.72rem;
   font-weight: 700;
@@ -1066,10 +928,8 @@ h2 span {
 
 .giving-list p {
   margin-top: 7px;
-
   color:
     color-mix(in oklab, var(--background) 70%, transparent);
-
   font-size: 0.9rem;
   line-height: 1.62;
 }
@@ -1093,22 +953,14 @@ h2 span {
 
 .accordion summary {
   display: grid;
-
   grid-template-columns: minmax(0, 1fr) auto;
-
   min-height: 74px;
-
   align-items: center;
-
   gap: 16px;
-
   padding: 16px 4px;
-
   font-size: 1rem;
   font-weight: 700;
-
   cursor: pointer;
-
   list-style: none;
 }
 
@@ -1118,7 +970,6 @@ h2 span {
 
 .accordion summary svg {
   color: var(--primary);
-
   transition: transform 0.25s ease;
 }
 
@@ -1128,11 +979,8 @@ h2 span {
 
 .accordion details p {
   max-width: 650px;
-
   padding: 0 44px 24px 4px;
-
   color: var(--ink-soft);
-
   font-size: 0.96rem;
   line-height: 1.66;
 }
@@ -1143,68 +991,49 @@ h2 span {
 
 .footer-main {
   position: relative;
-
   overflow: hidden;
-
   padding-block: 52px;
-
   background: var(--charcoal);
   color: var(--background);
 }
 
 .footer-main::before {
   content: "";
-
   position: absolute;
-
   top: 0;
   right: 0;
-
   width: 38%;
   height: 3px;
-
   background: var(--primary);
 }
 
 .footer-grid {
   position: relative;
-
   display: grid;
-
   grid-template-columns: minmax(0, 1fr);
-
   gap: 34px;
-
   align-items: start;
-
   justify-items: start;
-
   text-align: left;
 }
 
 .footer-brand {
   display: block;
-
   width: min(220px, 100%);
 }
 
 .footer-brand img {
   display: block;
-
   width: 100%;
   height: auto;
-
   object-fit: contain;
 }
 
 .footer-title,
 .footer-contact h2 {
   margin-bottom: 8px;
-
   color: var(--primary);
-
   font-family: var(--font-sans);
-
   font-size: 0.76rem;
   font-weight: 800;
 }
@@ -1213,11 +1042,8 @@ h2 span {
 .footer-contact,
 .footer-links {
   display: grid;
-
   align-content: start;
-
   justify-items: start;
-
   gap: 9px;
 }
 
@@ -1228,13 +1054,10 @@ h2 span {
 .footer-contact a,
 .footer-links a {
   width: fit-content;
-
   color:
     color-mix(in oklab, var(--background) 76%, transparent);
-
   font-size: 0.86rem;
   line-height: 1.45;
-
   transition: color 0.2s ease;
 }
 
@@ -1245,27 +1068,19 @@ h2 span {
 
 .social-links {
   display: grid;
-
   grid-template-columns: repeat(4, 40px);
-
   gap: 10px;
-
   margin-top: 12px;
 }
 
 .social-links a {
   display: grid;
-
   width: 40px;
   height: 40px;
-
   place-items: center;
-
   border: 1px solid
     color-mix(in oklab, var(--background) 22%, transparent);
-
   border-radius: 50%;
-
   color: var(--background);
 }
 
@@ -1281,18 +1096,14 @@ h2 span {
 
 .footer-legal {
   padding-block: 23px;
-
   border-top: 1px solid var(--border);
-
   background: var(--background);
 }
 
 .footer-legal p {
   color: var(--ink-soft);
-
   font-size: 0.78rem;
   font-weight: 600;
-
   text-align: center;
 }
 
@@ -1326,7 +1137,6 @@ h2 span {
 
   .learning-close {
     flex-direction: row;
-
     align-items: center;
     justify-content: space-between;
   }
@@ -1340,13 +1150,11 @@ h2 span {
     grid-template-columns:
       minmax(0, 0.95fr)
       minmax(0, 1.05fr);
-
     gap: 70px;
   }
 
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 46px 64px;
   }
 
@@ -1362,9 +1170,7 @@ h2 span {
 @media (min-width: 1100px) {
   .header-inner {
     grid-template-columns: 180px minmax(0, 1fr) auto;
-
     gap: 18px;
-
     min-height: 82px;
   }
 
@@ -1375,43 +1181,30 @@ h2 span {
 
   .desktop-nav {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 16px;
   }
 
   .desktop-nav a {
     position: relative;
-
     padding-block: 12px;
-
     color: var(--ink-soft);
-
     font-size: 0.72rem;
     font-weight: 700;
-
     white-space: nowrap;
   }
 
   .desktop-nav a::after {
     content: "";
-
     position: absolute;
-
     right: 0;
     bottom: 5px;
     left: 0;
-
     height: 1px;
-
     background: var(--primary);
-
     transform: scaleX(0);
-
     transform-origin: left;
-
     transition: transform 0.2s ease;
   }
 
@@ -1421,13 +1214,9 @@ h2 span {
 
   .header-inner > .header-cta {
     display: inline-flex;
-
     min-height: 44px;
-
     margin-top: 0;
-
     padding-inline: 14px;
-
     font-size: 0.71rem;
   }
 
@@ -1443,7 +1232,6 @@ h2 span {
     grid-template-columns:
       minmax(0, 1.05fr)
       minmax(410px, 0.95fr);
-
     gap: 76px;
   }
 
@@ -1451,7 +1239,6 @@ h2 span {
     grid-template-columns:
       minmax(0, 0.9fr)
       minmax(0, 1.1fr);
-
     gap: 100px;
   }
 
@@ -1471,7 +1258,6 @@ h2 span {
     grid-template-columns:
       minmax(0, 1fr)
       minmax(450px, 0.9fr);
-
     gap: 90px;
   }
 
@@ -1479,7 +1265,6 @@ h2 span {
     grid-template-columns:
       minmax(0, 0.9fr)
       minmax(0, 1.1fr);
-
     gap: 68px;
   }
 
@@ -1487,7 +1272,6 @@ h2 span {
     grid-template-columns:
       minmax(0, 0.8fr)
       minmax(0, 1.2fr);
-
     gap: 90px;
   }
 
@@ -1501,9 +1285,7 @@ h2 span {
       minmax(135px, 0.7fr)
       minmax(165px, 0.85fr)
       minmax(260px, 1.15fr);
-
     align-items: center;
-
     gap: clamp(32px, 4vw, 64px);
   }
 
@@ -1527,24 +1309,75 @@ h2 span {
    ========================================================= */
 
 @media (max-width: 700px) {
+  .hero {
+    min-height: 82svh;
+    padding-block: 76px 48px;
+  }
+
+  .hero-layout {
+    min-height: calc(82svh - 124px);
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    padding-bottom: 40px;
+  }
+
   /*
-     MOBILE HERO IMAGE
-     Keep the image visible while maintaining text readability.
+    MOBILE HERO IMAGE VISIBILITY
+
+    More of the original image is kept visible.
+    The image is positioned toward the right side so
+    the important visual area remains visible behind
+    the text.
   */
 
-  .hero-bg img {
-    object-position: 65% center;
+  .hero-bg {
+    inset: 0;
   }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: 72% center;
+  }
+
+  /*
+    Reduced white overlay on mobile so the image
+    doesn't disappear behind the background.
+  */
 
   .hero-veil {
     background:
       linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.88) 0%,
-        rgba(255, 255, 255, 0.68) 42%,
-        rgba(255, 255, 255, 0.30) 72%,
-        rgba(255, 255, 255, 0.10) 100%
+        rgba(255, 255, 255, 0.76) 0%,
+        rgba(255, 255, 255, 0.56) 34%,
+        rgba(255, 255, 255, 0.24) 65%,
+        rgba(255, 255, 255, 0.05) 100%
       );
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 9vw, 3.1rem);
+    line-height: 1.08;
+  }
+
+  .hero-kicker {
+    max-width: 100%;
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero-intro {
+    max-width: 100%;
+    margin-top: 14px;
+    font-size: 0.94rem;
+    line-height: 1.6;
   }
 
   .modal-backdrop {
@@ -1554,11 +1387,8 @@ h2 span {
 
   .modal-card.google-form-modal {
     width: 100%;
-
     height: calc(100dvh - 20px);
-
     max-height: calc(100dvh - 20px);
-
     border-radius: 12px;
   }
 
@@ -1586,34 +1416,52 @@ h2 span {
   }
 
   .hero {
-    min-height: 78svh;
+    min-height: 82svh;
+    padding-block: 70px 42px;
+  }
+
+  .hero-layout {
+    min-height: calc(82svh - 112px);
+  }
+
+  .hero-copy {
+    padding-bottom: 24px;
   }
 
   .hero h1 {
     font-size: 2.12rem;
+    line-height: 1.08;
   }
 
   /*
-     IMPORTANT MOBILE IMAGE VISIBILITY FIX
+    IMPORTANT MOBILE IMAGE VISIBILITY FIX
 
-     Previously the background was too white/faded.
-     This version allows more of the original image
-     to remain visible behind the content.
+    Keep the main visual area visible while still
+    maintaining readability for the text.
   */
 
   .hero-bg img {
-    object-position: 68% center;
+    object-position: 74% center;
+    object-fit: cover;
   }
 
   .hero-veil {
     background:
       linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.82) 0%,
-        rgba(255, 255, 255, 0.62) 38%,
-        rgba(255, 255, 255, 0.26) 68%,
-        rgba(255, 255, 255, 0.06) 100%
+        rgba(255, 255, 255, 0.70) 0%,
+        rgba(255, 255, 255, 0.50) 35%,
+        rgba(255, 255, 255, 0.20) 68%,
+        rgba(255, 255, 255, 0.04) 100%
       );
+  }
+
+  .hero-kicker {
+    font-size: 0.95rem;
+  }
+
+  .hero-intro {
+    font-size: 0.9rem;
   }
 
   .modal-backdrop {
@@ -1622,11 +1470,8 @@ h2 span {
 
   .modal-card.google-form-modal {
     width: 100%;
-
     height: 100dvh;
-
     max-height: 100dvh;
-
     border-radius: 0;
   }
 
@@ -1637,27 +1482,21 @@ h2 span {
 
 /* =========================================================
    GOOGLE FORM POPUP MODALS
-
    Used by both Explore Casebook and Explore Event
    ========================================================= */
 
 button.action-link {
   border: 0;
-
   cursor: pointer;
-
   font: inherit;
 }
 
 .modal-backdrop {
   position: fixed;
-
   inset: 0;
-
   z-index: 1000;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -1673,21 +1512,16 @@ button.action-link {
   position: relative;
 
   display: flex;
-
   flex-direction: column;
 
   width: min(900px, 100%);
-
   height: min(88vh, 820px);
-
   max-height: 88vh;
 
   padding: 0;
-
   overflow: hidden;
 
   border: 0;
-
   border-radius: 16px;
 
   background: #ffffff;
@@ -1698,50 +1532,36 @@ button.action-link {
 
 .google-form-frame-wrap {
   position: relative;
-
   flex: 1 1 auto;
-
   min-height: 0;
-
   overflow: hidden;
-
   background: #ffffff;
 }
 
 .google-form-frame {
   display: block;
-
   width: 100%;
   height: 100%;
-
   min-height: 600px;
-
   border: 0;
-
   background: #ffffff;
 }
 
 .modal-close {
   position: absolute;
-
   top: 14px;
   right: 14px;
-
   z-index: 5;
 
   display: grid;
-
   width: 40px;
   height: 40px;
-
   place-items: center;
 
   border: 0;
-
   border-radius: 50%;
 
   background: #f3f3f3;
-
   color: #1f1f1f;
 
   cursor: pointer;
@@ -1756,7 +1576,6 @@ button.action-link {
 
 .modal-close:hover {
   background: #e9e9e9;
-
   transform: scale(1.04);
 }
 
@@ -1765,7 +1584,449 @@ button.action-link {
   appearance: none;
   -webkit-appearance: none;
 }
+/* =========================================================
+   YOGA / CREATIVE LIFESTYLE SECTION
+   Desktop: Text LEFT + Image RIGHT
+   ========================================================= */
 
+.yoga-section {
+  position: relative;
+  overflow: hidden;
+  padding-block: 78px 70px;
+  background: #fdfbf8;
+}
+
+.yoga-grid {
+  display: grid;
+  grid-template-columns: minmax(390px, 0.82fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: 55px;
+  width: min(1500px, calc(100% - 80px));
+  margin-inline: auto;
+}
+
+.yoga-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+}
+
+.yoga-copy .eyebrow {
+  margin-bottom: 18px;
+}
+
+.yoga-copy h2 {
+  max-width: 570px;
+  font-size: clamp(3.2rem, 5vw, 5.15rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: #111111;
+}
+
+.yoga-highlight {
+  margin-top: 24px;
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 2.4vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.yoga-description {
+  max-width: 545px;
+  margin-top: 20px;
+  color: #394047;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.yoga-button {
+  margin-top: 27px;
+  min-height: 58px;
+  padding-inline: 23px;
+  border-radius: 7px;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.yoga-button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.yoga-button:hover svg {
+  transform: translateX(4px);
+}
+
+.yoga-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+}
+
+.yoga-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: center center;
+}
+
+
+/* =========================================================
+   YOGA TABLET
+   ========================================================= */
+
+@media (max-width: 1099px) and (min-width: 769px) {
+
+  .yoga-section {
+    padding-block: 70px 60px;
+  }
+
+  .yoga-grid {
+    grid-template-columns: minmax(330px, 0.9fr) minmax(0, 1.1fr);
+    gap: 35px;
+    width: min(100% - 64px, 1200px);
+  }
+
+  .yoga-copy h2 {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+  }
+
+  .yoga-highlight {
+    font-size: 1.65rem;
+  }
+
+  .yoga-description {
+    font-size: 0.95rem;
+  }
+
+  .yoga-button {
+    min-height: 52px;
+    font-size: 0.88rem;
+  }
+}
+
+
+/* =========================================================
+   YOGA MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .yoga-section {
+    padding-block: 62px 50px;
+  }
+
+  .yoga-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 35px;
+    width: min(100% - 40px, 700px);
+  }
+
+  .yoga-copy {
+    max-width: 100%;
+  }
+
+  .yoga-copy h2 {
+    max-width: 100%;
+    font-size: clamp(2.7rem, 10vw, 4rem);
+    line-height: 1;
+  }
+
+  .yoga-highlight {
+    margin-top: 20px;
+    font-size: clamp(1.45rem, 6vw, 2rem);
+  }
+
+  .yoga-description {
+    max-width: 100%;
+    margin-top: 16px;
+    font-size: 0.94rem;
+    line-height: 1.62;
+  }
+
+  .yoga-button {
+    min-height: 52px;
+    margin-top: 23px;
+    padding-inline: 18px;
+    font-size: 0.84rem;
+  }
+
+  .yoga-image {
+    width: 100%;
+  }
+
+  .yoga-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* =========================================================
+   YOGA SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .yoga-section {
+    padding-block: 52px 42px;
+  }
+
+  .yoga-grid {
+    width: min(100% - 32px, 1200px);
+    gap: 28px;
+  }
+
+  .yoga-copy h2 {
+    font-size: 2.55rem;
+  }
+
+  .yoga-highlight {
+    font-size: 1.35rem;
+  }
+
+  .yoga-description {
+    font-size: 0.9rem;
+  }
+
+  .yoga-button {
+    width: 100%;
+    min-height: 50px;
+  }
+}
+/* =========================================================
+   YOGA INTERNAL PAGE
+   Opens inside the OrangePie website
+   Casebook & Event popups are NOT affected
+   ========================================================= */
+
+.yoga-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ---------------------------------------------------------
+   YOGA PAGE HEADER
+   --------------------------------------------------------- */
+
+.yoga-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  min-height: 78px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 14px 28px;
+
+  border-bottom: 1px solid
+    color-mix(in oklab, var(--border) 80%, transparent);
+
+  background: color-mix(
+    in oklab,
+    var(--background) 94%,
+    transparent
+  );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* ---------------------------------------------------------
+   BACK TO OPC BUTTON
+   --------------------------------------------------------- */
+
+.yoga-back-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--background);
+  color: var(--foreground);
+
+  font-size: 0.86rem;
+  font-weight: 750;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.yoga-back-button:hover {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  transform: translateY(-1px);
+}
+
+.yoga-back-button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------
+   PAGE TITLE
+   --------------------------------------------------------- */
+
+.yoga-page-header h1 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-align: right;
+}
+
+/* ---------------------------------------------------------
+   YOGA CONTENT
+   --------------------------------------------------------- */
+
+.yoga-page-content {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 78px);
+
+  background: var(--background);
+}
+
+/* ---------------------------------------------------------
+   FULL PAGE YOGA WEBSITE
+   --------------------------------------------------------- */
+
+.yoga-full-iframe {
+  display: block;
+
+  width: 100%;
+  height: calc(100vh - 78px);
+
+  min-height: 700px;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+
+  background: #ffffff;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .yoga-page-header {
+    min-height: 68px;
+    padding: 12px 18px;
+  }
+
+  .yoga-page-header h1 {
+    font-size: 1.05rem;
+  }
+
+  .yoga-back-button {
+    min-height: 40px;
+    padding-inline: 13px;
+    font-size: 0.8rem;
+  }
+
+  .yoga-full-iframe {
+    height: calc(100vh - 68px);
+    min-height: 650px;
+  }
+
+  .yoga-page-content {
+    min-height: calc(100vh - 68px);
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 560px) {
+  .yoga-page-header {
+    min-height: 64px;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .yoga-page-header h1 {
+    font-size: 0.95rem;
+  }
+
+  .yoga-back-button {
+    min-height: 38px;
+    padding: 0 11px;
+    gap: 6px;
+    font-size: 0.74rem;
+  }
+
+  .yoga-back-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .yoga-full-iframe {
+    width: 100%;
+    height: calc(100vh - 64px);
+    min-height: 620px;
+  }
+
+  .yoga-page-content {
+    min-height: calc(100vh - 64px);
+  }
+}
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 380px) {
+  .yoga-page-header {
+    padding-inline: 10px;
+  }
+
+  .yoga-page-header h1 {
+    font-size: 0.85rem;
+  }
+
+  .yoga-back-button {
+    padding-inline: 9px;
+    font-size: 0.7rem;
+  }
+}
 /* =========================================================
    REDUCED MOTION
    ========================================================= */
